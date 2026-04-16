@@ -1,0 +1,491 @@
+/*
+Theme Name: Velocity North
+Theme URI: https://velocitynorth.com
+Author: Velocity North
+Author URI: https://velocitynorth.com
+Description: Custom dark theme for Velocity North ÔÇö performance marketing agency. Features dark background, red/salmon accent colors, monospace typography, terminal-inspired UI elements.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: velocitynorth
+*/
+
+/* ========== RESET &amp; BASE ========== */
+@import url(&#039;https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Space+Mono:wght@400;700&amp;display=swap&#039;);
+
+:root {
+  --color-bg: #121212;
+  --color-bg-card: #1e1e1e;
+  --color-bg-darker: #0a0a0a;
+  --color-primary: #db4434;
+  --color-secondary: #f0ada2;
+  --color-text: #f0ada2;
+  --color-text-muted: #ba8077;
+  --color-text-dim: #886660;
+  --color-border: rgba(219, 68, 52, 0.3);
+  --color-card-bg: #0d0d0d;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: &#039;Space Mono&#039;, monospace;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grid background overlay */
+body::before {
+  content: &#039;&#039;;
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(219,68,52,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(219,68,52,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; }
+
+/* ========== LAYOUT ========== */
+.vn-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.vn-container-narrow {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.vn-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.vn-section-dark {
+  padding: 6rem 0;
+  background: var(--color-bg-darker);
+  position: relative;
+}
+
+.vn-text-center { text-align: center; }
+
+/* ========== TYPOGRAPHY ========== */
+.vn-heading-xl {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.vn-heading-lg {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.vn-heading-md {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.vn-subheading {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.vn-gradient-text {
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vn-text { color: var(--color-text); font-size: 1rem; }
+.vn-text-lg { font-size: 1.125rem; }
+.vn-text-muted { color: var(--color-text-muted); margin-bottom: 1rem; }
+.vn-text-muted-sm { color: var(--color-text-muted); font-size: 0.875rem; }
+.vn-text-dim { color: var(--color-text-dim); font-size: 0.875rem; }
+
+.vn-label {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.vn-label-sm {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.vn-cursor { color: var(--color-primary); animation: blink 1s infinite; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.vn-prose p {
+  color: var(--color-text-dim);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+/* ========== CARDS ========== */
+.vn-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vn-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(219, 68, 52, 0.2);
+}
+
+/* ========== TERMINAL WINDOWS ========== */
+.vn-terminal {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.vn-terminal-header {
+  background: rgba(219, 68, 52, 0.1);
+  border-bottom: 1px solid rgba(219, 68, 52, 0.2);
+  padding: 0.5rem 1rem;
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vn-terminal-body {
+  padding: 1.5rem;
+}
+
+/* ========== BUTTONS ========== */
+.vn-btn-filled {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.vn-btn-filled:hover {
+  box-shadow: 0 0 25px rgba(219, 68, 52, 0.6);
+  text-decoration: none;
+}
+
+.vn-btn-outline {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.vn-btn-outline:hover {
+  background: rgba(219, 68, 52, 0.1);
+  box-shadow: 0 0 20px rgba(219, 68, 52, 0.4);
+  text-decoration: none;
+}
+
+.vn-btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ========== GRIDS ========== */
+.vn-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vn-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vn-stats-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vn-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.vn-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.vn-service-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.vn-service-info { }
+
+.vn-feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* ========== HERO ========== */
+.vn-hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.vn-hero-content { }
+
+.vn-hero-cards { }
+
+/* ========== STATS ========== */
+.vn-stat-number {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(219, 68, 52, 0.3);
+  margin-bottom: 0.25rem;
+}
+
+.vn-stat-value {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* ========== FEATURE LISTS ========== */
+.vn-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.vn-feature-list li {
+  font-size: 0.875rem;
+  color: var(--color-text-dim);
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.vn-bullet {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.vn-benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.vn-benefit-list li {
+  font-size: 0.875rem;
+  color: var(--color-text-dim);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vn-benefit-list li:last-child { border-bottom: none; }
+
+/* ========== TESTIMONIALS ========== */
+.vn-quote-mark {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+  opacity: 0.6;
+  line-height: 1;
+}
+
+.vn-testimonial-author {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 1rem;
+}
+
+.vn-author-name {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+}
+
+.vn-author-role {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.125rem;
+}
+
+/* ========== CONTACT ========== */
+.vn-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vn-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.vn-info-icon {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* ========== WORDPRESS OVERRIDES ========== */
+/* Override WP default styles to maintain dark theme */
+.entry-content,
+.page-content,
+.post-content {
+  color: var(--color-text);
+}
+
+/* Contact Form 7 styling */
+.wpcf7 input[type=&quot;text&quot;],
+.wpcf7 input[type=&quot;email&quot;],
+.wpcf7 textarea {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-family: &#039;Space Mono&#039;, monospace;
+  font-size: 0.875rem;
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.wpcf7 label {
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.wpcf7 input[type=&quot;submit&quot;] {
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  font-family: &#039;Aldrich&#039;, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.wpcf7 input[type=&quot;submit&quot;]:hover {
+  box-shadow: 0 0 25px rgba(219, 68, 52, 0.6);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .vn-grid-3,
+  .vn-stats-grid,
+  .vn-hero-grid,
+  .vn-contact-grid,
+  .vn-service-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .vn-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vn-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vn-section, .vn-section-dark {
+    padding: 3rem 0;
+  }
+
+  .vn-hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
