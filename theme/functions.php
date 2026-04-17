@@ -99,3 +99,14 @@ function velocitynorth_hubspot_styles() {
     </style>';
 }
 add_action( 'wp_head', 'velocitynorth_hubspot_styles' );
+
+/**
+ * Clear any stray output before REST API JSON responses.
+ * Fixes Application Passwords broken by plugins that emit a BOM or whitespace.
+ */
+add_filter( 'rest_pre_serve_request', function( $served, $result, $request, $server ) {
+    if ( ob_get_length() ) {
+        ob_clean();
+    }
+    return $served;
+}, 1, 4 );
