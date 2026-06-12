@@ -2,13 +2,10 @@
 /**
  * Code Snippet #9 — Google Tag Manager — GTM-TK7F6GLG
  * GTM container: script high in <head> (priority 1) + noscript right after <body> via wp_body_open.
+ * scope: front-end | active: True | priority: 1
  *
- * Scope: front-end  |  Priority: 1  |  Active: True
- *
- * SOURCE OF TRUTH: This snippet lives in the WordPress database (Code Snippets
- * plugin) on velocitynorth.ai. This file is an exported backup/record only.
- * Editing this file does NOT change the live site — edit via the Code Snippets
- * REST API or WP Admin → Snippets, then re-export.
+ * SOURCE OF TRUTH = WordPress DB (Code Snippets plugin on velocitynorth.ai).
+ * This file is an exported backup — editing it does NOT change the live site.
  */
 
 add_action('wp_head', function() { ?>

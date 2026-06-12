@@ -2,13 +2,10 @@
 /**
  * Code Snippet #8 — Footer — Privacy Policy link
  * Appends Privacy Policy link to footer navigation list.
+ * scope: front-end | active: True | priority: 10
  *
- * Scope: front-end  |  Priority: 10  |  Active: True
- *
- * SOURCE OF TRUTH: This snippet lives in the WordPress database (Code Snippets
- * plugin) on velocitynorth.ai. This file is an exported backup/record only.
- * Editing this file does NOT change the live site — edit via the Code Snippets
- * REST API or WP Admin → Snippets, then re-export.
+ * SOURCE OF TRUTH = WordPress DB (Code Snippets plugin on velocitynorth.ai).
+ * This file is an exported backup — editing it does NOT change the live site.
  */
 
 add_action('wp_head', function() { ?>

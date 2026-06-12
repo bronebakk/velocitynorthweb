@@ -1,0 +1,13 @@
+id | active | name | file
+1 | off | Make upload filenames lower case | 01-make-upload-filenames-lower-case.php
+2 | off | Disable admin bar | 02-disable-admin-bar.php
+3 | off | Allow smilies | 03-allow-smilies.php
+4 | off | Current year | 04-current-year.php
+5 | off | Velocity North — site chrome (header/footer/no-sidebar) | 05-velocity-north-site-chrome-header-footer-no-sidebar.php
+6 | off | Velocity North — site chrome | 06-velocity-north-site-chrome.php
+7 | on  | Velocity North — site chrome v2 | 07-velocity-north-site-chrome-v2.php
+8 | on  | Footer — Privacy Policy link | 08-footer-privacy-policy-link.php
+9 | on  | Google Tag Manager — GTM-TK7F6GLG | 09-google-tag-manager-gtm-tk7f6glg.php
+10 | off | HubSpot form — dark terminal styling (contact) | 10-hubspot-form-dark-terminal-styling-contact.php
+11 | on  | HubSpot cookie banner — terminal styling | 11-hubspot-cookie-banner-terminal-styling.php
+12 | on  | Front page — single H1 (disable theme title on home) | 12-front-page-single-h1-disable-theme-title-on-home.php

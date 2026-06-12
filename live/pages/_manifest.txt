@@ -1,9 +1,8 @@
-Live pages on velocitynorth.ai (exported backup of WP page content)
-ID | slug | title | content-length
-32 | compliance-check | Free Compliance Check | 242
-29 | privacy | Privacy Policy | 4328
-15 | contact | Contact | 6301
-14 | services | Services | 9664
-13 | about | About | 3974
-12 | blog | Blog | 0
-10 | home | Home | 32350
+id | slug | title | file
+10 | home | Home | home.html
+12 | blog | Blog | blog.html
+13 | about | About | about.html
+14 | services | Services | services.html
+15 | contact | Contact | contact.html
+29 | privacy | Privacy Policy | privacy.html
+32 | compliance-check | Free Compliance Check | compliance-check.html
