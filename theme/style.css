@@ -3,15 +3,15 @@ Theme Name: Velocity North
 Theme URI: https://velocitynorth.com
 Author: Velocity North
 Author URI: https://velocitynorth.com
-Description: Custom dark theme for Velocity North ÔÇö performance marketing agency. Features dark background, red/salmon accent colors, monospace typography, terminal-inspired UI elements.
+Description: Custom dark theme for Velocity North — performance marketing agency. Features dark background, red/salmon accent colors, monospace typography, terminal-inspired UI elements.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: velocitynorth
 */
 
-/* ========== RESET &amp; BASE ========== */
-@import url(&#039;https://fonts.googleapis.com/css2?family=Aldrich&amp;family=Space+Mono:wght@400;700&amp;display=swap&#039;);
+/* ========== RESET & BASE ========== */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   --color-bg: #121212;
@@ -29,7 +29,7 @@ Text Domain: velocitynorth
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: &#039;Space Mono&#039;, monospace;
+  font-family: 'Space Mono', monospace;
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -38,7 +38,7 @@ body {
 
 /* Grid background overlay */
 body::before {
-  content: &#039;&#039;;
+  content: '';
   position: fixed;
   inset: 0;
   background-image:
@@ -82,7 +82,7 @@ img { max-width: 100%; height: auto; }
 
 /* ========== TYPOGRAPHY ========== */
 .vn-heading-xl {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
@@ -90,7 +90,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-heading-lg {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -98,7 +98,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-heading-md {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
@@ -106,7 +106,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-subheading {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -128,7 +128,7 @@ img { max-width: 100%; height: auto; }
 .vn-text-dim { color: var(--color-text-dim); font-size: 0.875rem; }
 
 .vn-label {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -137,7 +137,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-label-sm {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -181,7 +181,7 @@ img { max-width: 100%; height: auto; }
   background: rgba(219, 68, 52, 0.1);
   border-bottom: 1px solid rgba(219, 68, 52, 0.2);
   padding: 0.5rem 1rem;
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -201,7 +201,7 @@ img { max-width: 100%; height: auto; }
   background: var(--color-primary);
   color: #fff;
   border: 2px solid var(--color-primary);
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.875rem;
@@ -221,7 +221,7 @@ img { max-width: 100%; height: auto; }
   background: transparent;
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.875rem;
@@ -309,7 +309,7 @@ img { max-width: 100%; height: auto; }
 
 /* ========== STATS ========== */
 .vn-stat-number {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--color-primary);
@@ -318,7 +318,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-stat-value {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
@@ -376,7 +376,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .vn-author-name {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.875rem;
   color: var(--color-primary);
 }
@@ -417,15 +417,15 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Contact Form 7 styling */
-.wpcf7 input[type=&quot;text&quot;],
-.wpcf7 input[type=&quot;email&quot;],
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
 .wpcf7 textarea {
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 0.75rem 1rem;
   width: 100%;
-  font-family: &#039;Space Mono&#039;, monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 0.875rem;
 }
 
@@ -436,7 +436,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .wpcf7 label {
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   font-size: 0.6875rem;
   text-transform: uppercase;
   color: var(--color-secondary);
@@ -444,11 +444,11 @@ img { max-width: 100%; height: auto; }
   margin-bottom: 0.5rem;
 }
 
-.wpcf7 input[type=&quot;submit&quot;] {
+.wpcf7 input[type="submit"] {
   background: var(--color-primary);
   color: #fff;
   border: 2px solid var(--color-primary);
-  font-family: &#039;Aldrich&#039;, sans-serif;
+  font-family: 'Aldrich', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.875rem;
@@ -458,7 +458,7 @@ img { max-width: 100%; height: auto; }
   transition: box-shadow 0.3s ease;
 }
 
-.wpcf7 input[type=&quot;submit&quot;]:hover {
+.wpcf7 input[type="submit"]:hover {
   box-shadow: 0 0 25px rgba(219, 68, 52, 0.6);
 }
 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truth Gap — Velocity North prototype (Vitality Labs)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121212;
+    --bg-card:#0d0d0d;
+    --bg-darker:#0a0a0a;
+    --primary:#db4434;
+    --secondary:#f0ada2;
+    --text:#f0ada2;
+    --muted:#ba8077;
+    --dim:#886660;
+    --border:rgba(219,68,52,0.3);
+    --verified:#3ddc84;          /* only ever used for verified / recovered numbers */
+    --verified-dim:rgba(61,220,132,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Space Mono',monospace;-webkit-font-smoothing:antialiased;line-height:1.6;
+    background-image:
+      linear-gradient(rgba(219,68,52,0.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(219,68,52,0.04) 1px,transparent 1px);
+    background-size:42px 42px;
+  }
+  h1,h2,h3,.aldrich{font-family:'Aldrich',sans-serif;font-weight:400}
+  .section{max-width:1180px;margin:0 auto;padding:96px 32px}
+
+  .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+  .eyebrow::before{content:"// ";color:var(--dim)}
+  .headline{font-size:clamp(1.9rem,4vw,3rem);line-height:1.1;color:var(--secondary);max-width:22ch;margin-bottom:18px}
+  .headline em{color:var(--verified);font-style:normal}
+  .lede{color:var(--muted);max-width:64ch;font-size:.95rem;margin-bottom:18px}
+  .casebar{display:flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:46px}
+  .casebar b{color:var(--secondary);font-weight:400}
+  .casebar .sep{color:var(--border)}
+
+  .compare{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;border:1px solid var(--border);background:var(--bg-card)}
+  .panel{padding:34px 32px}
+  .panel + .panel{border-left:1px solid var(--border)}
+  .panel .tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:26px}
+  .dot{width:8px;height:8px;border-radius:50%}
+  .reported .tag{color:var(--dim)}
+  .reported .dot{background:var(--dim)}
+  .verified .tag{color:var(--verified)}
+  .verified .dot{background:var(--verified);box-shadow:0 0 10px var(--verified-dim)}
+
+  .metric{margin-bottom:26px}
+  .metric:last-child{margin-bottom:0}
+  .metric .label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+  .metric .num{font-family:'Aldrich',sans-serif;font-size:2.1rem;line-height:1}
+  .reported .num{color:var(--muted)}
+  .verified .num{color:var(--verified)}
+  .metric .sub{font-size:.72rem;color:var(--dim);margin-top:6px}
+
+  /* visibility bar: how much the platform could "see" vs reality */
+  .seebar{height:6px;background:rgba(255,255,255,0.05);margin-top:10px;position:relative;overflow:hidden}
+  .seebar > i{position:absolute;left:0;top:0;height:100%;width:0;transition:width .9s ease .3s}
+  .reported .seebar > i{background:var(--dim)}
+  .verified .seebar > i{background:var(--verified)}
+
+  .gap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 26px;min-width:170px;background:var(--bg-darker);border-left:1px solid var(--border);border-right:1px solid var(--border)}
+  .gap .glyph{color:var(--verified);font-size:1.5rem;margin-bottom:8px}
+  .gap .gapval{font-family:'Aldrich',sans-serif;font-size:2rem;color:var(--verified);line-height:1}
+  .gap .gaplabel{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-top:10px;text-align:center;line-height:1.5}
+
+  .console{margin-top:30px;border:1px solid var(--border);background:var(--bg-darker);font-size:.82rem;color:var(--muted)}
+  .console .bar{display:flex;align-items:center;gap:7px;padding:9px 14px;border-bottom:1px solid var(--border);color:var(--dim);font-size:.7rem;letter-spacing:.08em}
+  .console .bar i{width:9px;height:9px;border-radius:50%;display:inline-block;background:var(--dim)}
+  .console .bar i:nth-child(1){background:var(--primary)}
+  .console .body{padding:16px 18px;min-height:128px}
+  .console .line{white-space:pre-wrap;opacity:0;animation:fadein .35s forwards}
+  .console .ok{color:var(--verified)}
+  .console .accent{color:var(--primary)}
+  .console .prompt{color:var(--secondary)}
+  .cursor{display:inline-block;width:8px;height:1.05em;background:var(--verified);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+
+  @keyframes fadein{to{opacity:1}}
+  @keyframes blink{50%{opacity:0}}
+
+  .foot{margin-top:30px;font-size:.8rem;color:var(--dim);max-width:70ch}
+  .foot b{color:var(--verified);font-weight:400}
+
+  @media(max-width:760px){
+    .compare{grid-template-columns:1fr}
+    .panel + .panel{border-left:0;border-top:1px solid var(--border)}
+    .gap{flex-direction:row;gap:14px;border-left:0;border-right:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px}
+  }
+</style>
+</head>
+<body>
+  <section class="section">
+    <div class="eyebrow">the truth gap</div>
+    <h1 class="headline">Google saw 6 conversions. There were actually <em>23</em>.</h1>
+    <p class="lede">Cookie consent walls, Safari ITP and iOS ATT make ad platforms blind to most of what they actually drive. We reconcile every conversion server-side — so you stop cutting campaigns that are quietly working.</p>
+    <div class="casebar"><span>Case</span><b>Vitality Labs</b><span class="sep">·</span><span>Google Ads</span><span class="sep">·</span><span>last 30 days</span></div>
+
+    <div class="compare" id="compare">
+      <div class="panel reported" id="reported">
+        <div class="tag"><span class="dot"></span>Platform reported</div>
+        <div class="metric">
+          <div class="label">Conversions seen</div>
+          <div class="num" data-to="6">0</div>
+          <div class="seebar"><i data-w="26"></i></div>
+          <div class="sub">Google could attribute ~26% of reality</div>
+        </div>
+        <div class="metric">
+          <div class="label">Apparent cost / conversion</div>
+          <div class="num" data-to="696" data-prefix="kr ">kr 0</div>
+          <div class="sub">looks expensive — so you'd pause it</div>
+        </div>
+      </div>
+
+      <div class="gap">
+        <div class="glyph">↑</div>
+        <div class="gapval" id="gapval">+283%</div>
+        <div class="gaplabel">+17 conversions<br>recovered server-side</div>
+      </div>
+
+      <div class="panel verified" id="verified">
+        <div class="tag"><span class="dot"></span>Verified · server-side</div>
+        <div class="metric">
+          <div class="label">True conversions</div>
+          <div class="num" data-to="23">0</div>
+          <div class="seebar"><i data-w="100"></i></div>
+          <div class="sub">full server-side picture · 100% captured</div>
+        </div>
+        <div class="metric">
+          <div class="label">True cost / conversion</div>
+          <div class="num" data-to="182" data-prefix="kr ">kr 0</div>
+          <div class="sub">74% lower — the campaign is profitable</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="console">
+      <div class="bar"><i></i><i></i><i></i> digtective@velocitynorth — reconcile</div>
+      <div class="body" id="console"></div>
+    </div>
+
+    <p class="foot">Same spend (kr 4,176). Same campaign. <b>Google was about to tell you it was failing — the server-side truth says it's one of your best.</b></p>
+  </section>
+
+<script>
+  const fmt=(v,dec,prefix,suffix)=>prefix+(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suffix;
+  function countUp(el){
+    const to=parseFloat(el.dataset.to),dec=parseInt(el.dataset.dec||0),
+          prefix=el.dataset.prefix||'',suffix=el.dataset.suffix||'';
+    const dur=1100,start=performance.now();
+    function step(now){
+      const t=Math.min(1,(now-start)/dur),e=1-Math.pow(1-t,3);
+      el.textContent=fmt(to*e,dec,prefix,suffix);
+      if(t<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const consoleLines=[
+    {t:'<span class="prompt">$</span> digtective reconcile --client=vitality-labs --source=server --window=30d'},
+    {t:'  platform attributed ......... <span class="accent">6</span> conversions'},
+    {t:'  recovered (consent / ITP / iOS lost): <span class="ok">+17</span>'},
+    {t:'  <span class="ok">✓</span> true conversions: <span class="ok">23</span>  ·  recovery <span class="ok">+283%</span>'},
+    {t:'  true CPA: <span class="ok">kr 182</span>  (platform thought kr 696)'},
+    {t:'<span class="prompt">$</span> verdict: scale, don\'t pause<span class="cursor"></span>'}
+  ];
+
+  function runConsole(){
+    const box=document.getElementById('console');box.innerHTML='';
+    consoleLines.forEach((l,i)=>setTimeout(()=>{
+      const d=document.createElement('div');d.className='line';d.innerHTML=l.t;box.appendChild(d);
+    },i*620));
+  }
+
+  function play(){
+    document.querySelectorAll('#reported .num').forEach(countUp);
+    setTimeout(()=>document.querySelectorAll('#verified .num').forEach(countUp),650);
+    document.querySelectorAll('.seebar > i').forEach(b=>b.style.width=b.dataset.w+'%');
+    runConsole();
+  }
+
+  const io=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting){play();io.disconnect();}});},{threshold:.4});
+  io.observe(document.getElementById('compare'));
+</script>
+</body>
+</html>

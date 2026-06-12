@@ -1,0 +1,59 @@
+<!-- wp:html -->
+<div class="vn-section" style="border-bottom:1px solid rgba(219,68,52,0.3);"><div class="vn-container vn-text-center"><p class="vn-label"><span class="vn-cursor">&gt;</span> CONTACT</p><h1 class="vn-heading-xl vn-gradient-text">Let's talk growth</h1><p class="vn-text-muted vn-text-lg">Ready to accelerate your business? Get in touch and let's discuss how we can help.</p></div></div>
+<div class="vn-section"><div class="vn-container"><div class="vn-contact-grid"><div class="vn-terminal"><div class="vn-terminal-header">NEW_MESSAGE.exe</div><div class="vn-terminal-body" style="padding:2rem;"><style>
+.vn-hsform label{display:block;font-family:'Aldrich',sans-serif;font-size:.6875rem;text-transform:uppercase;letter-spacing:.05em;color:#ba8077;margin-bottom:.4rem;}
+.vn-hsform input[type=text],.vn-hsform input[type=email],.vn-hsform textarea{width:100%;background:#0d0d0d;color:#f0ada2;border:1px solid rgba(219,68,52,.3);padding:.625rem .75rem;font-family:'Space Mono',monospace;font-size:.875rem;border-radius:0;box-shadow:none;}
+.vn-hsform input:focus,.vn-hsform textarea:focus{border-color:#db4434;outline:none;}
+.vn-hsform-field{margin-bottom:1rem;}
+.vn-hsform-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.vn-hsform-row{grid-template-columns:1fr;}}
+.vn-hsform-submit{background:#db4434;color:#fff;border:2px solid #db4434;font-family:'Aldrich',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.875rem;padding:.75rem 2rem;cursor:pointer;width:100%;transition:box-shadow .3s ease;border-radius:0;}
+.vn-hsform-submit:hover{box-shadow:0 0 25px rgba(219,68,52,.6);}
+.vn-hsform-submit:disabled{opacity:.6;cursor:wait;}
+.vn-hsform-note{font-size:.7rem;color:#886660;margin-top:.75rem;}
+.vn-hsform-note a{color:#ba8077;}
+.vn-hsform-status{display:none;font-size:.875rem;margin-top:1rem;padding:.75rem;border:1px solid;}
+.vn-hsform-status.ok{display:block;color:#3ddc84;border-color:rgba(61,220,132,.4);}
+.vn-hsform-status.err{display:block;color:#db4434;border-color:rgba(219,68,52,.4);}
+.vn-hsform-hp{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;}
+</style>
+<form class="vn-hsform" id="vn-contact-form" novalidate>
+<div class="vn-hsform-row">
+<div class="vn-hsform-field"><label for="vnf-name">Name</label><input type="text" id="vnf-name" name="name" autocomplete="name"></div>
+<div class="vn-hsform-field"><label for="vnf-email">Email *</label><input type="email" id="vnf-email" name="email" required autocomplete="email"></div>
+</div>
+<div class="vn-hsform-field"><label for="vnf-company">Company</label><input type="text" id="vnf-company" name="company" autocomplete="organization"></div>
+<div class="vn-hsform-field"><label for="vnf-message">Message</label><textarea id="vnf-message" name="message" rows="5"></textarea></div>
+<div class="vn-hsform-hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<button type="submit" class="vn-hsform-submit">Send message &rarr;</button>
+<p class="vn-hsform-note">By submitting, you agree to our <a href="/privacy/">privacy policy</a>.</p>
+<p class="vn-hsform-status" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+var f=document.getElementById('vn-contact-form');if(!f)return;
+var status=f.querySelector('.vn-hsform-status');
+function cookie(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}
+f.addEventListener('submit',function(e){
+e.preventDefault();
+var email=f.email.value.trim();
+if(!email){status.className='vn-hsform-status err';status.textContent='> ERROR: email is required';return;}
+if(f.website.value){status.className='vn-hsform-status ok';status.textContent='> MESSAGE_SENT :: we will get back to you within 24h';f.reset();return;}
+var name=f.name.value.trim(),sp=name.indexOf(' ');
+var fields=[{name:'email',value:email}];
+if(name)fields.push({name:'firstname',value:sp>0?name.slice(0,sp):name});
+if(sp>0)fields.push({name:'lastname',value:name.slice(sp+1)});
+if(f.company.value.trim())fields.push({name:'company',value:f.company.value.trim()});
+if(f.message.value.trim())fields.push({name:'message',value:f.message.value.trim()});
+var btn=f.querySelector('.vn-hsform-submit');btn.disabled=true;btn.textContent='Sending...';
+fetch('https://api-eu1.hsforms.com/submissions/v3/integration/submit/148224378/ce7212bc-f62d-4a20-aa33-dbfb16616651',{
+method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({fields:fields,context:{hutk:cookie('hubspotutk')||undefined,pageUri:location.href,pageName:document.title}})
+}).then(function(r){return r.ok?r.json():Promise.reject(r)}).then(function(){
+status.className='vn-hsform-status ok';status.textContent='> MESSAGE_SENT :: we will get back to you within 24h';f.reset();
+}).catch(function(){
+status.className='vn-hsform-status err';status.textContent='> TRANSMISSION_FAILED :: please email us at contact@velocitynorth.com';
+}).finally(function(){btn.disabled=false;btn.innerHTML='Send message \u2192';});
+});})();
+</script><p class="vn-text-muted-sm" style="margin-top:1rem;font-size:0.75rem;">Prefer email? <a href="mailto:contact@velocitynorth.com" style="color:#db4434;">contact@velocitynorth.com</a></p></div></div><div class="vn-contact-info"><h2 class="vn-heading-md vn-gradient-text">Get in touch</h2><p class="vn-text-muted-sm">Have a question or want to discuss a project? We're here to help.</p><div class="vn-info-item"><div class="vn-info-icon">&#128205;</div><div><p class="vn-label-sm">Location</p><p class="vn-text-dim">Gothenburg &amp; Oslo</p></div></div><div class="vn-info-item"><div class="vn-info-icon">&#9993;</div><div><p class="vn-label-sm">Email</p><p class="vn-text-dim"><a href="mailto:contact@velocitynorth.com" style="color:inherit;">contact@velocitynorth.com</a></p></div></div><div class="vn-info-item"><div class="vn-info-icon">&#128222;</div><div><p class="vn-label-sm">Phone</p><p class="vn-text-dim">+47 90 63 96 37</p></div></div><div class="vn-card" style="padding:1.5rem;margin-top:1.5rem;"><h3 class="vn-subheading" style="margin-bottom:0.5rem;">RESPONSE_TIME</h3><p class="vn-text-muted-sm">We typically respond within 24 hours during business days.</p></div></div></div></div></div>
+<!-- /wp:html -->

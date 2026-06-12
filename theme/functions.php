@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Velocity North Theme Functions
  *
@@ -8,6 +8,18 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+
+// Force HTTPS — fires before template rendering; respects Cloudflare X-Forwarded-Proto
+add_action( 'init', function() {
+    if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+        return;
+    }
+    $forwarded = isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ? strtolower( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) : '';
+    if ( ! is_ssl() && $forwarded !== 'https' ) {
+        wp_redirect( 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 301 );
+        exit;
+    }
+}, 1 );
 
 /**
  * Theme setup

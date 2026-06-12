@@ -1,0 +1,9 @@
+# Local tooling config — contains app passwords in approved-command rules. NEVER commit.
+.claude/
+
+# Build artifact of the legacy custom theme (not deployed)
+velocity-north.zip
+*.zip
+
+# OS noise
+.DS_Store

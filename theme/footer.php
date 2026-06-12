@@ -14,6 +14,7 @@
           &lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/about/&#039; ) ); ?&gt;&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/services/&#039; ) ); ?&gt;&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/contact/&#039; ) ); ?&gt;&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;&lt;?php echo esc_url( home_url( &#039;/privacy/&#039; ) ); ?&gt;&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
       &lt;div&gt;
@@ -21,7 +22,6 @@
         &lt;p class=&quot;vn-text-dim&quot;&gt;Gothenburg &amp;amp; Oslo&lt;/p&gt;
         &lt;p class=&quot;vn-text-dim&quot;&gt;&lt;a href=&quot;mailto:contact@velocitynorth.com&quot; style=&quot;color: var(--color-text-dim);&quot;&gt;contact@velocitynorth.com&lt;/a&gt;&lt;/p&gt;
         &lt;p class=&quot;vn-text-dim&quot;&gt;+47 90 63 96 37&lt;/p&gt;
-        &lt;p class=&quot;vn-text-dim&quot;&gt;+46 70 422 7777&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;vn-footer-bottom&quot;&gt;
