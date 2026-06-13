@@ -40,18 +40,30 @@ def layout(text, letterspace=0):
 
 def build_wordmark(filename, color_prompt, color_text, color_cursor, ls=40, size=64, pad=24):
     s = size / upm
-    # segments: ">" then " " then "Velocity North"
+    # Cursor block matches the live homepage site-title ::after exactly:
+    #   width:9px; height:1em; margin-left:6px; vertical-align:-2px  (font-size 16.8px)
+    EM_PX = 16.8
+    cursor_w_units    = round(upm * 9 / EM_PX)   # 0.536em wide
+    cursor_gap        = round(upm * 6 / EM_PX)   # 0.357em left margin
+    cursor_h_units    = upm                       # 1em tall
+    cursor_below_units = upm * 2 / EM_PX          # sits 2px below baseline
+    cursor_top_units  = cursor_h_units - cursor_below_units
+
+    # segments: ">" then gap then "Velocity North"
     prompt_items, prompt_w = layout(">", ls)
     gap = int(upm*0.28)
     text_items, text_w = layout("Velocity North", ls)
-    total_units = prompt_w + gap + text_w
-    cursor_w_units = int(upm*0.12)
-    cursor_gap = int(upm*0.18)
-    total_units += cursor_gap + cursor_w_units
+    total_units = prompt_w + gap + text_w + cursor_gap + cursor_w_units
+
+    # vertical bounds: cursor overshoots the caps (as on the homepage); keep the
+    # 'y' descender in frame too
+    desc_units = abs(font["hhea"].descent)
+    top_units = max(capH, cursor_top_units)
+    bottom_units = max(desc_units, cursor_below_units)
 
     W = pad*2 + total_units*s
-    H = pad*2 + capH*s
-    baseline = pad + capH*s
+    H = pad*2 + (top_units + bottom_units)*s
+    baseline = pad + top_units*s
 
     def grp(items, xoff_units, color):
         out = []
@@ -65,7 +77,8 @@ def build_wordmark(filename, color_prompt, color_text, color_cursor, ls=40, size
     parts.append(grp(text_items, prompt_w+gap, color_text))
     cx = pad + (prompt_w+gap+text_w+cursor_gap)*s
     cw = cursor_w_units*s
-    parts.append(f'<rect x="{cx:.2f}" y="{baseline-capH*s:.2f}" width="{cw:.2f}" height="{capH*s:.2f}" fill="{color_cursor}"/>')
+    cur_y = baseline - cursor_top_units*s
+    parts.append(f'<rect x="{cx:.2f}" y="{cur_y:.2f}" width="{cw:.2f}" height="{cursor_h_units*s:.2f}" fill="{color_cursor}"/>')
 
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W:.0f}" height="{H:.0f}" '
            f'viewBox="0 0 {W:.2f} {H:.2f}" role="img" aria-label="Velocity North">\n'
