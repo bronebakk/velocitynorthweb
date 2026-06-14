@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #FBFAF8; color: #2A211E; font-family: 'Space Mono', monospace; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  @keyframes vnblink { to { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { [data-cursor] { animation: none !important; } }
+  ::selection { background: #D1402F; color: #fff; }
+</style>
+</helmet>
+
+<div style="position:fixed; inset:0; z-index:0; pointer-events:none; background-image: linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px); background-size: 42px 42px;"></div>
+
+<div style="position:relative; z-index:1; display:flex; align-items:flex-start;">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside style="position:sticky; top:0; height:100vh; width:272px; flex-shrink:0; border-right:1px solid rgba(0,0,0,0.10); padding:32px 26px; overflow-y:auto; background:rgba(251,250,248,0.86); backdrop-filter:blur(4px);">
+    <div style="display:flex; align-items:baseline; gap:7px; font-family:'Aldrich', sans-serif; font-size:17px; letter-spacing:0.04em; color:#1A1411;">
+      <span style="color:#9A8B85;">&gt;</span><span>VELOCITY NORTH</span><span data-cursor style="display:inline-block; width:8px; height:0.95em; background:#D1402F; transform:translateY(1px); animation:vnblink 1.06s steps(2,start) infinite;"></span>
+    </div>
+    <div style="font-size:12px; color:#9A8B85; margin:8px 0 28px; letter-spacing:0.04em;">// design system &amp; build brief</div>
+
+    <nav style="display:flex; flex-direction:column; gap:2px; font-size:13px; letter-spacing:0.03em;">
+      <a href="#sec00" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">00</span> Overview</a>
+      <a href="#sec01" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">01</span> Color &amp; contrast</a>
+      <a href="#sec02" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">02</span> Typography</a>
+      <a href="#sec03" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">03</span> Spacing · radii · motion</a>
+      <a href="#sec04" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">04</span> Primitives</a>
+      <a href="#sec05" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">05</span> Components</a>
+      <a href="#sec06" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">06</span> Screens</a>
+      <a href="#sec07" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">07</span> Accessibility</a>
+      <a href="#sec08" style="text-decoration:none; color:#2A211E; padding:8px 10px; border-radius:6px; display:flex; gap:10px;"><span style="color:#D1402F;">08</span> Build order</a>
+    </nav>
+
+    <div style="margin-top:32px; padding-top:20px; border-top:1px solid rgba(0,0,0,0.10); font-size:11px; line-height:1.7; color:#9A8B85;">Suya AB · 559024-5717<br>Gothenburg &amp; Oslo<br>WordPress · GeneratePress · Code Snippets</div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main style="flex:1; min-width:0; padding:0 0 120px;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 48px;">
+
+      <!-- ===== 00 OVERVIEW ===== -->
+      <section id="sec00" data-screen-label="00 Overview" style="padding:72px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 00 — overview</div>
+        <h1 style="font-family:'Aldrich', sans-serif; font-size:clamp(40px,6vw,62px); line-height:1.03; letter-spacing:-0.01em; color:#1A1411; font-weight:400; margin:18px 0 0; max-width:18ch;">The numbers were never the hard part.</h1>
+        <p style="font-size:18px; line-height:1.65; color:#2A211E; max-width:64ch; margin:24px 0 0;">A single source of truth for velocitynorth.ai — consolidated tokens, component specs with every state, per-screen layouts, accessibility rules, and a sequenced build order. Everything here is expressible as CSS rules, small HTML fragments, and shortcode/CPT output inside <strong>GeneratePress + Code Snippets</strong>. No custom theme, no build step.</p>
+
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:36px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:22px 24px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.14em; color:#6E5B55; text-transform:uppercase; margin-bottom:10px;">The positioning</div>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#2A211E;">Ad platforms under-report conversions (consent, ITP, ATT). The dashboards lie. Velocity North reconciles every conversion <strong>server-side</strong> and optimises on real profitability. The design must <em>feel</em> like measured truth: precise, technical, no fluff.</p>
+          </div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:22px 24px;">
+            <div style="font-size:12px; font-weight:700; letter-spacing:0.14em; color:#6E5B55; text-transform:uppercase; margin-bottom:10px;">The motif</div>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#2A211E;">A developer-terminal language on a warm light page — <span style="color:#9A8B85;">&gt;</span> prompts, <span style="color:#9A8B85;">//</span> comment eyebrows, a blinking red cursor, <code style="background:#F4F1EF; padding:1px 5px; border-radius:4px;">.exe</code> window chrome. Selected data moments stay dark consoles even in light mode.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; background:#141210; border-radius:12px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.28);">
+          <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0A0A0A; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:11px;height:11px;border-radius:50%;background:#D1402F;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#BA8077;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#2FBE71;"></span>
+            <span style="margin-left:8px; font-size:12px; color:#8A817B;">velocitynorth — design.exe</span>
+          </div>
+          <div style="padding:22px 24px; font-size:14px; line-height:1.9; color:#C9C2BC;">
+            <div><span style="color:#2FBE71;">$</span> non-negotiables</div>
+            <div style="color:#8A817B;">  ▸ terminal/console insets stay <span style="color:#F0ADA2;">dark</span> in light mode</div>
+            <div style="color:#8A817B;">  ▸ faithful data only — no invented numbers</div>
+            <div style="color:#8A817B;">  ▸ NDA: no B2B SaaS client names — finance / lead-gen proxies</div>
+            <div style="color:#8A817B;">  ▸ schema = Rank Math enhancement, never duplicate JSON-LD</div>
+            <div style="color:#8A817B;">  ▸ SVG inline only (host blocks SVG upload)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 01 COLOR ===== -->
+      <section id="sec01" data-screen-label="01 Color" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 01 — color &amp; contrast</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 0;">One consolidated palette</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:60ch; margin:16px 0 32px;">Warm off-white base, a single brand red, a verified green, and a dark-console sub-palette for data insets. Every text pairing below is checked against WCAG AA.</p>
+
+        <!-- swatch grid -->
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#FBFAF8; border-bottom:1px solid rgba(0,0,0,0.06);"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--bg</div><div style="font-size:11px; color:#9A8B85;">#FBFAF8 · page</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#F4F1EF; border-bottom:1px solid rgba(0,0,0,0.06);"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--bg-alt</div><div style="font-size:11px; color:#9A8B85;">#F4F1EF · alt</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.06);"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--card</div><div style="font-size:11px; color:#9A8B85;">#FFFFFF · surface</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#D1402F;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--primary</div><div style="font-size:11px; color:#9A8B85;">#D1402F · brand</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#B5362A;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--primary-strong</div><div style="font-size:11px; color:#9A8B85;">#B5362A · hover/text</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#11854A;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--verified</div><div style="font-size:11px; color:#9A8B85;">#11854A · truth</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#2FBE71;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--verified-fill</div><div style="font-size:11px; color:#9A8B85;">#2FBE71 · fills</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#1A1411;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--text</div><div style="font-size:11px; color:#9A8B85;">#1A1411 · headings</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#2A211E;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--text-body</div><div style="font-size:11px; color:#9A8B85;">#2A211E · body</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#6E5B55;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--muted</div><div style="font-size:11px; color:#9A8B85;">#6E5B55 · secondary</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;"><div style="height:64px; background:#9A8B85;"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#1A1411; font-weight:700;">--dim</div><div style="font-size:11px; color:#9A8B85;">#9A8B85 · tertiary</div></div></div>
+          <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#141210;"><div style="height:64px; background:#141210; border-bottom:1px solid rgba(255,255,255,0.08);"></div><div style="padding:10px 12px;"><div style="font-size:12px; color:#F0ADA2; font-weight:700;">--console-bg</div><div style="font-size:11px; color:#8A817B;">#141210 · inset</div></div></div>
+        </div>
+
+        <!-- contrast table -->
+        <h3 style="font-family:'Aldrich', sans-serif; font-size:20px; color:#1A1411; font-weight:400; margin:40px 0 4px; letter-spacing:0.01em;">AA contrast audit</h3>
+        <p style="font-size:13px; color:#9A8B85; margin:0 0 16px;">Ratios vs the surface each color sits on. "AA Large" = ≥24px or ≥19px bold, or non-text/UI use only.</p>
+        <div style="border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; background:#fff;">
+          <div style="display:grid; grid-template-columns: 1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#9A8B85; background:#F4F1EF; padding:11px 16px;">
+            <div>Foreground</div><div>On</div><div>Ratio</div><div>Level</div><div>Use</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#1A1411;border:1px solid rgba(0,0,0,.15);"></span>--text</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">16.1:1</div><div style="color:#11854A; font-weight:700;">AAA</div><div style="color:#6E5B55;">Headings</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#2A211E;border:1px solid rgba(0,0,0,.15);"></span>--text-body</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">13.2:1</div><div style="color:#11854A; font-weight:700;">AAA</div><div style="color:#6E5B55;">Body copy</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#6E5B55;border:1px solid rgba(0,0,0,.15);"></span>--muted</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">5.4:1</div><div style="color:#11854A; font-weight:700;">AA</div><div style="color:#6E5B55;">Secondary ≥16px</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#9A8B85;border:1px solid rgba(0,0,0,.15);"></span>--dim</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">3.2:1</div><div style="color:#B5362A; font-weight:700;">AA Lg</div><div style="color:#6E5B55;">Captions ≥24px / non-text only</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#B5362A;border:1px solid rgba(0,0,0,.15);"></span>--primary-strong</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">5.1:1</div><div style="color:#11854A; font-weight:700;">AA</div><div style="color:#6E5B55;">Red text links, body size</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#D1402F;border:1px solid rgba(0,0,0,.15);"></span>--primary</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">4.1:1</div><div style="color:#B5362A; font-weight:700;">AA Lg</div><div style="color:#6E5B55;">Red only ≥24px / ≥19px bold</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#fff;border:1px solid rgba(0,0,0,.15);"></span>#FFFFFF</div><div style="color:#6E5B55;">--primary</div><div style="font-weight:700;">4.2:1</div><div style="color:#B5362A; font-weight:700;">AA Lg</div><div style="color:#6E5B55;">CTA label bold ≥18.66px — else fill --primary-strong (5.4:1)</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#11854A;border:1px solid rgba(0,0,0,.15);"></span>--verified</div><div style="color:#6E5B55;">--bg</div><div style="font-weight:700;">4.3:1</div><div style="color:#B5362A; font-weight:700;">AA Lg</div><div style="color:#6E5B55;">Green text ≥24px / icons</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(0,0,0,0.07); font-size:13px; align-items:center; background:#141210; color:#C9C2BC;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#C9C2BC;"></span>--console-text</div><div style="color:#8A817B;">--console-bg</div><div style="font-weight:700;">10.6:1</div><div style="color:#2FBE71; font-weight:700;">AAA</div><div style="color:#8A817B;">Console body text</div></div>
+          <div style="display:grid; grid-template-columns:1.4fr 1fr 0.7fr 0.7fr 1.6fr; gap:0; padding:12px 16px; border-top:1px solid rgba(255,255,255,0.08); font-size:13px; align-items:center; background:#141210; color:#C9C2BC;"><div style="display:flex; align-items:center; gap:8px;"><span style="width:14px;height:14px;border-radius:3px;background:#BA8077;"></span>--console-salmon-dim</div><div style="color:#8A817B;">--console-bg</div><div style="font-weight:700;">4.9:1</div><div style="color:#2FBE71; font-weight:700;">AA</div><div style="color:#8A817B;">Console accent text</div></div>
+        </div>
+
+        <!-- :root paste block -->
+        <h3 style="font-family:'Aldrich', sans-serif; font-size:20px; color:#1A1411; font-weight:400; margin:40px 0 12px; letter-spacing:0.01em;">Paste into snippet #7 (wp_head)</h3>
+        <div style="background:#141210; border-radius:12px; overflow:hidden;">
+          <div style="display:flex; align-items:center; gap:8px; padding:11px 16px; background:#0A0A0A;"><span style="width:10px;height:10px;border-radius:50%;background:#D1402F;"></span><span style="width:10px;height:10px;border-radius:50%;background:#BA8077;"></span><span style="width:10px;height:10px;border-radius:50%;background:#2FBE71;"></span><span style="margin-left:8px; font-size:12px; color:#8A817B;">:root tokens.css</span></div>
+          <pre style="margin:0; padding:20px 24px; font-size:13px; line-height:1.75; color:#C9C2BC; overflow-x:auto;">:root{
+  --bg:#FBFAF8; --bg-alt:#F4F1EF; --card:#FFFFFF;
+  --text:#1A1411; --text-body:#2A211E; --muted:#6E5B55; --dim:#9A8B85;
+  --primary:#D1402F; --primary-strong:#B5362A;
+  --verified:#11854A; --verified-fill:#2FBE71;
+  --border:rgba(0,0,0,.10); --border-accent:rgba(209,64,47,.32);
+  --grid:rgba(0,0,0,.035);
+  --console-bg:#141210; --console-head:#0A0A0A; --console-text:#C9C2BC;
+  --console-salmon:#F0ADA2; --console-salmon-dim:#BA8077;
+}</pre>
+        </div>
+      </section>
+
+      <!-- ===== 02 TYPE ===== -->
+      <section id="sec02" data-screen-label="02 Typography" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 02 — typography</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 0;">Aldrich + Space Mono</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:62ch; margin:16px 0 32px;"><strong style="color:#2A211E;">Aldrich</strong> — display, headings, labels, stat numbers (geometric, set in caps or as-authored, letter-spaced for labels). <strong style="color:#2A211E;">Space Mono</strong> — body, UI, terminal, meta. Never set paragraphs in Aldrich; never set headings in Space Mono.</p>
+
+        <div style="border:1px solid rgba(0,0,0,0.10); border-radius:14px; overflow:hidden; background:#fff;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Aldrich',sans-serif; font-size:54px; line-height:1.02; color:#1A1411;">Proof, not platform estimates.</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">Display / H1<br>Aldrich · clamp(40–62) · lh 1.03</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:22px 24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Aldrich',sans-serif; font-size:34px; line-height:1.08; color:#1A1411;">The truth gap</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">H2 · Aldrich<br>clamp(28–38) · lh 1.08</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Aldrich',sans-serif; font-size:22px; line-height:1.15; letter-spacing:0.01em; color:#1A1411;">Server-side reconciliation</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">H3 · Aldrich<br>22–24 · lh 1.15</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#D1402F;">// what we do</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">Eyebrow · Space Mono 700<br>13 · tracking .16em · UPPER</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Aldrich',sans-serif; font-size:50px; line-height:1; color:#11854A;">+283%</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">Stat number · Aldrich<br>clamp(40–56) · lh 1</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="font-family:'Space Mono',monospace; font-size:17px; line-height:1.65; color:#2A211E; max-width:54ch;">We reconcile every conversion server-side, so you optimise on the full picture — not the part the platform happened to catch.</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">Body · Space Mono<br>17 · lh 1.65</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:18px 24px;">
+            <div style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#1A1411;">GET STARTED →</div>
+            <div style="font-size:11px; color:#9A8B85; text-align:right; white-space:nowrap; flex-shrink:0;">UI / button · Space Mono 700<br>14 · tracking .04em</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; font-size:13px; line-height:1.7; color:#6E5B55;"><strong style="color:#2A211E;">Do</strong><br>· Caps + letter-spacing for Aldrich labels &amp; stat units<br>· <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">text-wrap:balance</code> on H1/H2<br>· Line-length 54–66ch for body</div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; font-size:13px; line-height:1.7; color:#6E5B55;"><strong style="color:#2A211E;">Don't</strong><br>· Aldrich for running paragraphs (legibility)<br>· Space Mono above 24px for headings<br>· More than 2 type sizes inside one card</div>
+        </div>
+      </section>
+
+      <!-- ===== 03 SPACING ===== -->
+      <section id="sec03" data-screen-label="03 Spacing" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 03 — spacing · radii · elevation · motion</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 28px;">Rhythm &amp; surface</h2>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          <!-- spacing scale -->
+          <div>
+            <h3 style="font-family:'Aldrich',sans-serif; font-size:18px; font-weight:400; color:#1A1411; margin:0 0 14px;">Spacing — 4px base</h3>
+            <div style="display:flex; flex-direction:column; gap:9px;">
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-1 · 4</span><span style="height:14px; width:4px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-2 · 8</span><span style="height:14px; width:8px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-3 · 12</span><span style="height:14px; width:12px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-4 · 16</span><span style="height:14px; width:16px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-5 · 24</span><span style="height:14px; width:24px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-6 · 32</span><span style="height:14px; width:32px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-7 · 48</span><span style="height:14px; width:48px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-8 · 64</span><span style="height:14px; width:64px; background:#D1402F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-9 · 96</span><span style="height:14px; width:96px; background:#C9897F; border-radius:2px;"></span></div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:12px; color:#6E5B55;"><span style="width:54px;">s-10·128</span><span style="height:14px; width:128px; background:#C9897F; border-radius:2px;"></span></div>
+            </div>
+            <p style="font-size:12px; line-height:1.7; color:#9A8B85; margin:16px 0 0;">Section padding <strong style="color:#6E5B55;">96px</strong> desktop / <strong style="color:#6E5B55;">56px</strong> mobile. Container max <strong style="color:#6E5B55;">1180px</strong>, prose <strong style="color:#6E5B55;">720px</strong>, grid gutter 24–32.</p>
+          </div>
+
+          <!-- radii + elevation -->
+          <div>
+            <h3 style="font-family:'Aldrich',sans-serif; font-size:18px; font-weight:400; color:#1A1411; margin:0 0 14px;">Radii &amp; elevation</h3>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;">
+              <div style="text-align:center;"><div style="width:62px;height:46px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:6px;"></div><div style="font-size:11px;color:#9A8B85;margin-top:5px;">chip · 6</div></div>
+              <div style="text-align:center;"><div style="width:62px;height:46px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:8px;"></div><div style="font-size:11px;color:#9A8B85;margin-top:5px;">btn/input · 8</div></div>
+              <div style="text-align:center;"><div style="width:62px;height:46px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:12px;"></div><div style="font-size:11px;color:#9A8B85;margin-top:5px;">console · 12</div></div>
+              <div style="text-align:center;"><div style="width:62px;height:46px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:16px;"></div><div style="font-size:11px;color:#9A8B85;margin-top:5px;">card · 16</div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;"><div style="width:80px;height:42px;background:#fff;border-radius:10px;box-shadow:0 1px 2px rgba(0,0,0,.05);"></div><div style="font-size:12px;color:#6E5B55;">--sh-1 · hairline rest</div></div>
+              <div style="display:flex; align-items:center; gap:14px;"><div style="width:80px;height:42px;background:#fff;border-radius:10px;box-shadow:0 10px 30px rgba(26,20,17,.08);"></div><div style="font-size:12px;color:#6E5B55;">--sh-card · hover lift</div></div>
+              <div style="display:flex; align-items:center; gap:14px;"><div style="width:80px;height:42px;background:#141210;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.28);"></div><div style="font-size:12px;color:#6E5B55;">--sh-console · dark inset</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- motion -->
+        <h3 style="font-family:'Aldrich',sans-serif; font-size:18px; font-weight:400; color:#1A1411; margin:32px 0 12px;">Motion</h3>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+          <div style="background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:12px;padding:18px 20px;"><div style="font-size:12px;font-weight:700;color:#1A1411;letter-spacing:.04em;">--dur 160ms</div><div style="font-size:12px;color:#9A8B85;margin-top:6px;line-height:1.6;">Hover/focus transitions. Easing <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">cubic-bezier(.2,.6,.2,1)</code>.</div></div>
+          <div style="background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:12px;padding:18px 20px;"><div style="font-size:12px;font-weight:700;color:#1A1411;letter-spacing:.04em;">cursor blink<span data-cursor style="display:inline-block;width:7px;height:0.95em;background:#D1402F;margin-left:5px;transform:translateY(1px);animation:vnblink 1.06s steps(2,start) infinite;"></span></div><div style="font-size:12px;color:#9A8B85;margin-top:6px;line-height:1.6;">1.06s · steps(2,start). The one signature animation.</div></div>
+          <div style="background:#fff;border:1px solid rgba(0,0,0,.10);border-radius:12px;padding:18px 20px;"><div style="font-size:12px;font-weight:700;color:#11854A;letter-spacing:.04em;">reduced-motion</div><div style="font-size:12px;color:#9A8B85;margin-top:6px;line-height:1.6;">Cursor goes solid; all transitions to 0ms via <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">prefers-reduced-motion</code>.</div></div>
+        </div>
+      </section>
+
+      <!-- ===== 04 PRIMITIVES ===== -->
+      <section id="sec04" data-screen-label="04 Primitives" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 04 — primitives</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 8px;">The building blocks</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:60ch; margin:0 0 32px;">Four reusable primitives every page and component is built from.</p>
+
+        <!-- K · console chrome -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">K · console / .exe window <span style="color:#D1402F;">— primitive</span></div>
+        <div style="background:#141210; border-radius:12px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.28); margin-bottom:14px;">
+          <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0A0A0A; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="width:11px;height:11px;border-radius:50%;background:#D1402F;"></span><span style="width:11px;height:11px;border-radius:50%;background:#BA8077;"></span><span style="width:11px;height:11px;border-radius:50%;background:#2FBE71;"></span>
+            <span style="margin-left:8px; font-size:12px; color:#8A817B;">digtective@velocitynorth — reconcile.exe</span>
+          </div>
+          <div style="padding:20px 24px; font-size:14px; line-height:1.95; color:#C9C2BC;">
+            <div><span style="color:#2FBE71;">$</span> reconcile --client=case --window=30d</div>
+            <div style="color:#8A817B;">platform coverage …… <span style="color:#F0ADA2;">~26%</span> → reconciled <span style="color:#2FBE71;">100%</span></div>
+            <div style="color:#2FBE71;">  ✓ recovery +283%<span data-cursor style="display:inline-block;width:8px;height:0.95em;background:#2FBE71;margin-left:4px;transform:translateY(2px);animation:vnblink 1.06s steps(2,start) infinite;"></span></div>
+          </div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-bottom:14px;"><strong style="color:#2A211E;">Anatomy:</strong> <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-terminal</code> (radius 12, --sh-console) → <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-terminal__bar</code> (3 dots + monospace title, bg --console-head) → <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-terminal__body</code> (--console-bg, --console-text, lh 1.9). <strong style="color:#2A211E;">Stays dark in light mode.</strong> Used by the truth-gap module (D) &amp; contact form (I). Title bar gets <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">role="img" aria-label</code> if dots are decorative.</div>
+
+        <!-- F · buttons -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin:30px 0 10px;">F · buttons</div>
+        <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:14px; padding:24px;">
+          <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start;">
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#fff; background:#D1402F; border:none; border-radius:8px; padding:13px 22px; cursor:pointer;">GET STARTED →</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">filled · default</div></div>
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#fff; background:#B5362A; border:none; border-radius:8px; padding:13px 22px; cursor:pointer;">GET STARTED →</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">filled · hover/active</div></div>
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#fff; background:#D1402F; border:none; border-radius:8px; padding:13px 22px; outline:2px solid #1A1411; outline-offset:2px; cursor:pointer;">GET STARTED →</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">filled · focus-visible</div></div>
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#9A8B85; background:#EDE9E6; border:none; border-radius:8px; padding:13px 22px;">GET STARTED →</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">filled · disabled</div></div>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start; margin-top:22px;">
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#B5362A; background:transparent; border:1px solid rgba(209,64,47,0.5); border-radius:8px; padding:12px 22px; cursor:pointer;">VIEW SERVICES</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">outline · default</div></div>
+            <div style="text-align:center;"><button style="font-family:'Space Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.04em; color:#fff; background:#B5362A; border:1px solid #B5362A; border-radius:8px; padding:12px 22px; cursor:pointer;">VIEW SERVICES</button><div style="font-size:11px; color:#9A8B85; margin-top:8px;">outline · hover (fill)</div></div>
+          </div>
+          <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-top:22px;"><strong style="color:#2A211E;">Rules:</strong> hit-target ≥44px; <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">→</code> icon trails filled CTAs only; focus = 2px <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">--text</code> outline w/ 2px offset (never remove); disabled uses neutral fill, not faded red (preserves contrast).</div>
+        </div>
+        <div style="background:#141210; border-radius:12px; overflow:hidden; margin-top:14px;">
+          <pre style="margin:0; padding:18px 22px; font-size:12.5px; line-height:1.7; color:#C9C2BC; overflow-x:auto;">.vn-btn-filled{font:700 14px/1 'Space Mono';letter-spacing:.04em;color:#fff;
+  background:var(--primary);border:0;border-radius:8px;padding:13px 22px;
+  min-height:44px;cursor:pointer;transition:background var(--dur) var(--ease);}
+.vn-btn-filled:hover,.vn-btn-filled:active{background:var(--primary-strong);}
+.vn-btn-filled:focus-visible{outline:2px solid var(--text);outline-offset:2px;}
+.vn-btn-filled:disabled{background:#EDE9E6;color:var(--dim);cursor:not-allowed;}
+.vn-btn-outline{color:var(--primary-strong);background:transparent;
+  border:1px solid var(--border-accent);/* hover → fill primary-strong, #fff */}</pre>
+        </div>
+
+        <!-- E · stat cards -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin:30px 0 10px;">E · stat card &amp; grid</div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:24px;"><div style="font-family:'Aldrich',sans-serif; font-size:46px; line-height:1; color:#11854A;">−90%</div><div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6E5B55; margin-top:12px;">Cost / application</div></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:24px;"><div style="font-family:'Aldrich',sans-serif; font-size:46px; line-height:1; color:#1A1411;">8×</div><div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6E5B55; margin-top:12px;">Application volume</div></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:24px;"><div style="font-family:'Aldrich',sans-serif; font-size:46px; line-height:1; color:#1A1411;">↓</div><div style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6E5B55; margin-top:12px;">Lower total spend</div></div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-top:12px;"><code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-stat-number</code> Aldrich · <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-card</code> grid <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">repeat(auto-fit,minmax(220px,1fr))</code>, gap 16, top-accent rule. Green only for genuinely positive deltas.</div>
+
+        <!-- L · prose -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin:30px 0 10px;">L · prose / long-form</div>
+        <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:14px; padding:28px 32px; max-width:720px;">
+          <h3 style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:24px; color:#1A1411; margin:0 0 12px; line-height:1.2;">The gap nobody talks about</h3>
+          <p style="font-family:'Space Mono',monospace; font-size:16px; line-height:1.7; color:#2A211E; margin:0 0 14px;">Giving a business accurate numbers does not, on its own, help it grow. The data was right — but the budget holders weren't built to use it. A <a href="#" style="color:#B5362A; text-decoration:underline; text-underline-offset:3px;">measurable model</a> closes that gap.</p>
+          <ul style="font-family:'Space Mono',monospace; font-size:15px; line-height:1.7; color:#2A211E; margin:0 0 14px; padding-left:0; list-style:none;">
+            <li style="padding-left:22px; position:relative; margin-bottom:6px;"><span style="position:absolute; left:0; color:#D1402F;">▸</span> Server-side conversion capture</li>
+            <li style="padding-left:22px; position:relative; margin-bottom:6px;"><span style="position:absolute; left:0; color:#D1402F;">▸</span> Click-chain attribution to revenue</li>
+          </ul>
+          <blockquote style="margin:0 0 14px; padding:4px 0 4px 18px; border-left:3px solid #D1402F; font-family:'Space Mono',monospace; font-size:16px; line-height:1.6; color:#1A1411;">"We stopped guessing. We're earning more, on less, and we know exactly why."</blockquote>
+          <p style="font-family:'Space Mono',monospace; font-size:14px; line-height:1.7; color:#6E5B55; margin:0;">Inline code reads <code style="background:#F4F1EF; color:#B5362A; padding:1px 6px; border-radius:4px;">digtective reconcile</code> in the salmon-on-warm treatment.</p>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-top:12px;"><code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">.vn-prose</code> max-width 720, body 16–17/1.7, h2/h3 Aldrich w/ 1.4em top margin, links --primary-strong underlined w/ 3px offset, list markers <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">▸</code> in --primary, blockquote 3px red rule. Used on blog single, privacy, terms.</div>
+      </section>
+
+      <!-- ===== 05 COMPONENTS ===== -->
+      <section id="sec05" data-screen-label="05 Components" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 05 — components</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 8px;">Composed patterns</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:60ch; margin:0 0 32px;">Each carries anatomy, states, responsive behaviour, and the snippet/page it lives in.</p>
+
+        <!-- A header/nav -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">A · header / primary nav <span style="color:#9A8B85;">— snippet #7</span></div>
+        <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; overflow:hidden; margin-bottom:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 22px; border-bottom:1px solid rgba(0,0,0,0.07);">
+            <div style="display:flex; align-items:baseline; gap:6px; font-family:'Aldrich',sans-serif; font-size:15px; letter-spacing:0.04em; color:#1A1411;"><span style="color:#9A8B85;">&gt;</span>VELOCITY NORTH<span data-cursor style="display:inline-block;width:7px;height:0.9em;background:#D1402F;transform:translateY(1px);animation:vnblink 1.06s steps(2,start) infinite;"></span></div>
+            <div style="display:flex; align-items:center; gap:20px; font-size:13px; color:#2A211E;">
+              <span style="color:#B5362A; border-bottom:2px solid #D1402F; padding-bottom:2px;">Home</span><span>About</span><span>Services</span><span>Results</span><span style="display:flex; gap:4px; align-items:center;">Tools <span style="font-size:9px; color:#9A8B85;">▾</span></span><span>Blog</span>
+              <button style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.04em; color:#fff; background:#D1402F; border:none; border-radius:8px; padding:9px 16px;">CONTACT →</button>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-bottom:26px;"><strong style="color:#2A211E;">States:</strong> active = red underline; hover = --primary-strong. <strong style="color:#2A211E;">Tools</strong> is a dropdown (Compliance Check…), opens on hover (desktop) / tap (touch), <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-expanded</code> + Esc-to-close. <strong style="color:#2A211E;">Mobile ≤860px:</strong> links collapse to a hamburger → full-height drawer, <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-controls</code>/<code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-expanded</code>, focus trap, body scroll-lock. Header sticky w/ 1px border that strengthens on scroll.</div>
+
+        <!-- D truth-gap (signature) -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">D · truth-gap module <span style="color:#D1402F;">— signature, home</span></div>
+        <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:0; background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:16px; overflow:hidden; margin-bottom:8px;">
+          <div style="padding:24px 26px; background:#FBFAF8;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#9A8B85; margin-bottom:14px;">Platform-reported</div>
+            <div style="font-family:'Aldrich',sans-serif; font-size:40px; color:#6E5B55; line-height:1;">~26%</div>
+            <div style="font-size:13px; color:#9A8B85; margin-top:10px;">consent / ITP / iOS hide the rest</div>
+          </div>
+          <div style="width:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; background:#F4F1EF; border-left:1px solid rgba(0,0,0,.07); border-right:1px solid rgba(0,0,0,.07);">
+            <div style="font-family:'Aldrich',sans-serif; font-size:28px; color:#D1402F; line-height:1;">+283%</div>
+            <div style="font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:#9A8B85; text-align:center;">the gap</div>
+          </div>
+          <div style="padding:24px 26px; background:#fff;">
+            <div style="font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#11854A; margin-bottom:14px;">Verified server-side</div>
+            <div style="font-family:'Aldrich',sans-serif; font-size:40px; color:#11854A; line-height:1;">100%</div>
+            <div style="font-size:13px; color:#6E5B55; margin-top:10px;">every conversion reconciled</div>
+          </div>
+        </div>
+        <div style="background:#141210; border-radius:12px; padding:16px 20px; font-size:13px; line-height:1.85; color:#C9C2BC; margin-bottom:8px;"><span style="color:#2FBE71;">$</span> verdict: <span style="color:#F0ADA2;">Google flags weak</span> → server-side says <span style="color:#2FBE71;">scale, don't pause</span></div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-bottom:26px;"><strong style="color:#2A211E;">Responsive:</strong> 3-col (panel · gap-pillar · panel) ≥760px → stacks to 1-col with the pillar becoming a divider row on mobile. Numbers are real client data only. The dark console readout sits below, full-width.</div>
+
+        <!-- H testimonial + filters -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">H · testimonial card + filters <span style="color:#9A8B85;">— CPT #16 / shortcode #17</span></div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <span style="font-size:12px; font-weight:700; letter-spacing:.04em; color:#fff; background:#1A1411; border-radius:6px; padding:7px 13px;">ALL</span>
+          <span style="font-size:12px; letter-spacing:.04em; color:#2A211E; background:#fff; border:1px solid rgba(0,0,0,.14); border-radius:6px; padding:7px 13px;">E-COMMERCE</span>
+          <span style="font-size:12px; letter-spacing:.04em; color:#2A211E; background:#fff; border:1px solid rgba(0,0,0,.14); border-radius:6px; padding:7px 13px;">LEAD GEN</span>
+        </div>
+        <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-top:2px solid rgba(209,64,47,0.32); border-radius:14px; padding:24px 26px; max-width:560px; margin-bottom:8px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <div style="font-family:'Aldrich',sans-serif; font-size:26px; color:#11854A; line-height:1;">0.24 → 5.1×</div>
+            <div style="color:#D1402F; font-size:13px; letter-spacing:2px;">★★★★★</div>
+          </div>
+          <p style="font-family:'Space Mono',monospace; font-size:15px; line-height:1.6; color:#2A211E; margin:0 0 14px;">"We stopped guessing — we're earning more, on less, and we know exactly why."</p>
+          <a href="#" style="font-size:13px; font-weight:700; color:#B5362A; text-decoration:none;">read the full story ▾</a>
+          <div style="border-top:1px solid rgba(0,0,0,.08); margin-top:14px; padding-top:12px; font-size:13px; color:#6E5B55;"><strong style="color:#1A1411;">Joakim B.</strong> · Co-founder · E-commerce, Stockholm</div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-bottom:26px;"><strong style="color:#2A211E;">Anatomy:</strong> result headline (Aldrich) · stars (--primary) · quote · <em>read full story</em> <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">&lt;details&gt;</code> disclosure · author/role/niche. <strong style="color:#2A211E;">States:</strong> collapsed/expanded, hover-lift (--sh-card), filter active = solid dark chip. <strong style="color:#2A211E;">Empty state:</strong> terminal line <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">// no results for {niche}</code>. NDA: niche labels, not SaaS names.
+
+        </div>
+
+        <!-- I contact form -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">I · contact form <span style="color:#9A8B85;">— page 15 → HubSpot Submissions API</span></div>
+        <div style="background:#141210; border-radius:12px; overflow:hidden; margin-bottom:8px; max-width:560px;">
+          <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0A0A0A;"><span style="width:11px;height:11px;border-radius:50%;background:#D1402F;"></span><span style="width:11px;height:11px;border-radius:50%;background:#BA8077;"></span><span style="width:11px;height:11px;border-radius:50%;background:#2FBE71;"></span><span style="margin-left:8px; font-size:12px; color:#8A817B;">contact.exe — let's talk</span></div>
+          <div style="padding:22px 24px; display:flex; flex-direction:column; gap:12px;">
+            <div><div style="font-size:11px; color:#8A817B; margin-bottom:5px;">$ name</div><div style="background:#0F0D0C; border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:11px 13px; font-size:13px; color:#C9C2BC;">Yann A. Skaalen<span data-cursor style="display:inline-block;width:7px;height:0.95em;background:#2FBE71;margin-left:2px;transform:translateY(2px);animation:vnblink 1.06s steps(2,start) infinite;"></span></div></div>
+            <div><div style="font-size:11px; color:#8A817B; margin-bottom:5px;">$ email</div><div style="background:#0F0D0C; border:1px solid rgba(240,173,162,0.55); border-radius:8px; padding:11px 13px; font-size:13px; color:#F0ADA2;">not-an-email</div><div style="font-size:11px; color:#F0ADA2; margin-top:5px;">! enter a valid email</div></div>
+            <button style="font-family:'Space Mono',monospace; font-size:13px; font-weight:700; letter-spacing:.04em; color:#fff; background:#D1402F; border:none; border-radius:8px; padding:12px; margin-top:4px;">SEND →</button>
+          </div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-bottom:26px;"><strong style="color:#2A211E;">Fields:</strong> Name · Email · Company · Message + honeypot. <strong style="color:#2A211E;">States:</strong> default / focus (salmon border) / error (inline <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">! message</code>) / loading (<code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">SENDING…</code> blinking) / success (<code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">✓ message received — reply within 1 business day</code>). <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-invalid</code> + <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-describedby</code> on errors, <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-live=polite</code> region for result.</div>
+
+        <!-- B footer + J logos + C cookie (compact row) -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+          <div>
+            <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">J · client logo strip</div>
+            <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:22px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+              <span style="font-family:'Aldrich',sans-serif; font-size:14px; color:#9A8B85; letter-spacing:.04em;">AI FINANS</span><span style="font-family:'Aldrich',sans-serif; font-size:14px; color:#9A8B85; letter-spacing:.04em;">ODONTIA</span><span style="font-family:'Aldrich',sans-serif; font-size:14px; color:#9A8B85; letter-spacing:.04em;">FINEPART</span><span style="font-family:'Aldrich',sans-serif; font-size:14px; color:#9A8B85; letter-spacing:.04em;">EM24</span>
+            </div>
+            <div style="font-size:12px; line-height:1.7; color:#9A8B85; margin-top:10px;">Grayscale at rest → color on hover. Even optical sizing (cap-height aligned, not box). Wraps 2-up on mobile.</div>
+          </div>
+          <div>
+            <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin-bottom:10px;">C · cookie banner <span style="color:#9A8B85;">— #11</span></div>
+            <div style="background:#141210; border-radius:10px; padding:16px 18px; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+              <div style="font-size:12px; color:#C9C2BC; flex:1; min-width:160px; line-height:1.5;"><span style="color:#2FBE71;">&gt;</span> we measure server-side. cookies optional.</div>
+              <button style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:#fff; background:#D1402F; border:none; border-radius:6px; padding:8px 12px;">ACCEPT</button>
+              <button style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:#C9C2BC; background:transparent; border:1px solid rgba(255,255,255,.22); border-radius:6px; padding:8px 12px;">DECLINE</button>
+            </div>
+            <div style="font-size:12px; line-height:1.7; color:#9A8B85; margin-top:10px;">Bottom-fixed bar. Accept / Decline / Settings. Console palette → AA verified (10.6:1).</div>
+          </div>
+        </div>
+
+        <!-- G author bio -->
+        <div style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.12em; color:#9A8B85; text-transform:uppercase; margin:30px 0 10px;">G · author bio box <span style="color:#9A8B85;">— snippet #18, single posts</span></div>
+        <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:14px; padding:24px; display:flex; gap:20px; align-items:flex-start; max-width:680px;">
+          <div style="width:64px; height:64px; border-radius:50%; background:#F4F1EF; border:1px solid rgba(0,0,0,.10); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'Aldrich',sans-serif; color:#9A8B85; font-size:20px;">YS</div>
+          <div>
+            <div style="font-family:'Aldrich',sans-serif; font-size:18px; color:#1A1411;">Yann A. Skaalen</div>
+            <p style="font-family:'Space Mono',monospace; font-size:14px; line-height:1.6; color:#6E5B55; margin:8px 0 10px;">30 years in advertising and three exits. I co-founded Velocity North because I got tired of delivering the right numbers and watching them go unused.</p>
+            <a href="#" style="font-size:13px; font-weight:700; color:#B5362A; text-decoration:none;">connect on LinkedIn →</a>
+          </div>
+        </div>
+        <div style="font-size:13px; line-height:1.7; color:#6E5B55; margin-top:12px;">Real headshot via avatar override (#19). Stacks vertically ≤520px. First-person voice. <strong style="color:#2A211E;">B · footer</strong> mirrors this surface: brand block + nav + contact columns + Suya AB org line, collapsing 4→1 column on mobile.</div>
+      </section>
+
+      <!-- ===== 06 SCREENS ===== -->
+      <section id="sec06" data-screen-label="06 Screens" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 06 — screens</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 8px;">Per-screen layout specs</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:60ch; margin:0 0 28px;">Section order, grid, and mobile stacking for every endpoint. <span style="color:#11854A; font-weight:700;">●</span> refine · <span style="color:#D1402F; font-weight:700;">●</span> create/expand · <span style="color:#9A8B85; font-weight:700;">●</span> light refine.</p>
+
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">01</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Home</strong> <span style="font-size:12px; color:#9A8B85;">/ (id 10)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Hero → logo strip (J) → truth-gap (D) → Thunderhoney console case → "What we do" (3 service cards, E) → CTA band. Tighten 96px section rhythm; mobile stacks single-col, console scrolls-x.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">02</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Blog archive</strong> <span style="font-size:12px; color:#9A8B85;">/blog/ (id 12)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Branded post cards: title (Aldrich) · byline + date · category chip · excerpt. Grid <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">auto-fit minmax(320px,1fr)</code>. Terminal pagination <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">‹ prev · next ›</code>. Replaces GP default.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">03</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Single post</strong> <span style="font-size:12px; color:#9A8B85;">/blog/&lt;post&gt;/</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Prose (L) at 720px · title + // eyebrow meta header · author bio (G) · prev/next · share row. Images full-bleed within reading column, code in console palette.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">04</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">About</strong> <span style="font-size:12px; color:#9A8B85;">/about/ (id 13)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Founder story (prose 720) → credibility stat row (E: 3 exits, 30 yrs) → values. First-person voice, consistent rhythm.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">05</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Services</strong> <span style="font-size:12px; color:#9A8B85;">/services/ (id 14)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Service blocks (Paid Search &amp; Social · B2B Outreach · SEO/AEO &amp; content · Automation) as feature cards with <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">▸</code> lists + CTA. 2-col ≥760 → 1-col.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">06</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Results</strong> <span style="font-size:12px; color:#9A8B85;">/testimonials/ (id 54)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Filter chips → testimonial grid (H) → empty state. Align card CSS to system (currently bespoke in #17).</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">07</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Contact</strong> <span style="font-size:12px; color:#9A8B85;">/contact/ (id 15)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">2-col: form .exe (I) + info column (locations, email, response-time card). Stacks form-first on mobile. Validate all states.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">08</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#D1402F;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Tools hub</strong> <span style="font-size:12px; color:#9A8B85;">/tools/ (id 47) · create</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Intro + tool cards linking out (Compliance Check, …). Currently 564 chars — needs a real landing. Card = title · one-liner · <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">run →</code>.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">09</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#D1402F;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Compliance Check</strong> <span style="font-size:12px; color:#9A8B85;">/compliance-check/ (id 32) · biggest lift</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;"><code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">[compliance_audit]</code> plugin form → result/report → email capture. Wrap the form in .exe chrome, restyle inputs/result to tokens, brand the report as a console readout.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">10</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#9A8B85;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Privacy &amp; Terms</strong> <span style="font-size:12px; color:#9A8B85;">/privacy/ (29) · /terms/ (41)</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Prose (L) only — ensure headings/lists/links legible at 720px. No console motif needed.</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">11</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#11854A;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">Author archive</strong> <span style="font-size:12px; color:#9A8B85;">/author/yannskaalen/</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">Branded "about the author" header (headshot + bio, à la an OM MEG block) + their post list (reuses archive cards).</div></div></div>
+
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:18px 20px; display:grid; grid-template-columns:34px 1fr; gap:14px;"><div style="font-family:'Aldrich',sans-serif; color:#9A8B85;">12</div><div><div style="display:flex; align-items:center; gap:10px;"><span style="color:#D1402F;">●</span><strong style="font-family:'Aldrich',sans-serif; color:#1A1411; font-weight:400;">404 · search · empty</strong> <span style="font-size:12px; color:#9A8B85;">· create</span></div><div style="font-size:13px; line-height:1.65; color:#6E5B55; margin-top:6px;">On-brand 404 as a console: <code style="background:#F4F1EF;padding:1px 4px;border-radius:4px;">$ command not found — try /services</code> + links. Search results reuse archive cards; empty = terminal one-liner.</div></div></div>
+        </div>
+      </section>
+
+      <!-- ===== 07 ACCESSIBILITY ===== -->
+      <section id="sec07" data-screen-label="07 Accessibility" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 07 — accessibility</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 28px;">Baked in, not bolted on</h2>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:20px 22px;"><div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#D1402F; margin-bottom:10px;">Focus</div><p style="font-size:14px; line-height:1.65; color:#6E5B55; margin:0;">Visible <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">:focus-visible</code> everywhere — 2px <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">--text</code> outline, 2px offset. Skip-to-content link. Logical tab order; drawer traps focus + restores on close.</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:20px 22px;"><div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#D1402F; margin-bottom:10px;">Contrast</div><p style="font-size:14px; line-height:1.65; color:#6E5B55; margin:0;">Body/secondary text pass AA. <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">--dim</code>, <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">--primary</code>, <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">--verified</code> are AA-Large only — gate by size/weight (see §01). CTA text uses bold ≥18.66px or the --primary-strong fill.</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:20px 22px;"><div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#D1402F; margin-bottom:10px;">ARIA</div><p style="font-size:14px; line-height:1.65; color:#6E5B55; margin:0;">Nav <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-expanded</code>/<code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-controls</code>; disclosure via native <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">&lt;details&gt;</code>; form <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-invalid</code> + <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-describedby</code> + <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-live</code> result. Decorative dots/cursor get <code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">aria-hidden</code>.</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-radius:12px; padding:20px 22px;"><div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#D1402F; margin-bottom:10px;">Reduced motion</div><p style="font-size:14px; line-height:1.65; color:#6E5B55; margin:0;"><code style="background:#F4F1EF;padding:1px 5px;border-radius:4px;">@media (prefers-reduced-motion:reduce)</code> → cursor solid, transitions 0ms, no auto-scroll. Motion is decorative only; never conveys state.</p></div>
+        </div>
+      </section>
+
+      <!-- ===== 08 BUILD ORDER ===== -->
+      <section id="sec08" data-screen-label="08 Build order" style="padding:84px 0 0; scroll-margin-top:24px;">
+        <div style="font-size:13px; font-weight:700; letter-spacing:0.16em; color:#D1402F; text-transform:uppercase;">// 08 — build order</div>
+        <h2 style="font-family:'Aldrich', sans-serif; font-size:clamp(28px,4vw,38px); line-height:1.08; color:#1A1411; font-weight:400; margin:14px 0 8px;">Ship in independent passes</h2>
+        <p style="font-size:16px; line-height:1.6; color:#6E5B55; max-width:60ch; margin:0 0 28px;">Sequenced so each pass is shippable on its own, mapped to the snippets/pages it touches.</p>
+
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #D1402F; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P0 · Foundation</strong><span style="font-size:12px; color:#9A8B85;">→ snippet #7</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">:root tokens · terminal chrome (K) · buttons (F) · prose (L) · section/grid rhythm (M). <strong style="color:#2A211E;">Unblocks everything.</strong></p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #D1402F; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P1 · Global chrome</strong><span style="font-size:12px; color:#9A8B85;">→ #7 · #8 · #11</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">Header + nav + mobile drawer (A) · footer (B) · cookie banner (C). The <em>mobile nav</em> is the top fire — do it here.</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #B5362A; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P2 · Home signature</strong><span style="font-size:12px; color:#9A8B85;">→ page 10</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">Truth-gap module (D) · stat grid (E) · logo strip (J). The brand-defining screen.</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #B5362A; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P3 · Content system</strong><span style="font-size:12px; color:#9A8B85;">→ posts · #18 · #19 · #16/#17</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">Blog archive + single + prose · author bio (G) · author archive · testimonials card + filters (H).</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #9A8B85; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P4 · Conversion</strong><span style="font-size:12px; color:#9A8B85;">→ pages 15 · 47 · 32</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">Contact form (I) · Tools hub · Compliance Check (the biggest single design lift).</p></div>
+          <div style="background:#fff; border:1px solid rgba(0,0,0,0.10); border-left:3px solid #9A8B85; border-radius:12px; padding:18px 22px;"><div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;"><strong style="font-family:'Aldrich',sans-serif; font-weight:400; font-size:17px; color:#1A1411;">P5 · Edge states</strong><span style="font-size:12px; color:#9A8B85;">→ new templates · 29 · 41</span></div><p style="font-size:13px; line-height:1.65; color:#6E5B55; margin:8px 0 0;">404 / search / empty states · legal prose.</p></div>
+          <div style="background:#141210; border-radius:12px; padding:18px 22px;"><div style="font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#2FBE71; margin-bottom:8px;">Cross-cutting (every pass)</div><p style="font-size:13px; line-height:1.7; color:#C9C2BC; margin:0;">AA contrast check on touched text · reduced-motion guard · schema as <span style="color:#F0ADA2;">Rank Math enhancement only</span> (filter the graph — never emit competing JSON-LD).</p></div>
+        </div>
+
+        <div style="margin-top:40px; padding-top:24px; border-top:1px solid rgba(0,0,0,0.10); display:flex; align-items:baseline; gap:7px; font-family:'Aldrich',sans-serif; font-size:14px; letter-spacing:0.04em; color:#9A8B85;"><span>&gt;</span><span>VELOCITY NORTH — end of brief</span><span data-cursor style="display:inline-block; width:7px; height:0.9em; background:#D1402F; transform:translateY(1px); animation:vnblink 1.06s steps(2,start) infinite;"></span></div>
+      </section>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+</body>
+</html>

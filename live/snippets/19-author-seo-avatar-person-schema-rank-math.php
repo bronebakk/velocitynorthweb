@@ -15,7 +15,7 @@
 define('VN_AUTHOR_UID', 1);
 define('VN_AUTHOR_PHOTO', 'https://velocitynorth.ai/wp-content/uploads/2026/06/yann-skaalen.png');
 define('VN_AUTHOR_LINKEDIN', 'https://www.linkedin.com/in/skaalen/');
-define('VN_AUTHOR_JOBTITLE', 'Co-founder, Velocity North');
+define('VN_AUTHOR_JOBTITLE', 'Co-founder & Partner, Velocity North');
 
 // 1) Use the uploaded headshot as this author's avatar everywhere (archive, schema, comments)
 add_filter('get_avatar_data', function ($args, $id_or_email) {

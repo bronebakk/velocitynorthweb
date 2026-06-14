@@ -5,5 +5,9 @@
 velocity-north.zip
 *.zip
 
+# Personal data dropped into the project (CV / LinkedIn export) — never commit
+Profile.pdf
+*.pdf
+
 # OS noise
 .DS_Store
