@@ -17,3 +17,4 @@ id | active | name | file
 16 | on  | Testimonials — CPT + niche taxonomy + fields | 16-testimonials-cpt-niche-taxonomy-fields.php
 17 | on  | Testimonials — [vn_testimonials] display shortcode | 17-testimonials-vn-testimonials-display-shortcode.php
 18 | on  | Author bio box (single posts) | 18-author-bio-box-single-posts.php
+19 | on  | Author SEO — avatar + Person schema (Rank Math) | 19-author-seo-avatar-person-schema-rank-math.php

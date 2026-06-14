@@ -44,10 +44,19 @@ def load_creds():
     return s["url"].rstrip("/"), s["username"], s["appPassword"]
 
 
+_cb = 0
+
+
 def api(url, user, pw, path):
     # Options (incl. credentials) are fed to curl via stdin config (-K -), so the
     # app password never appears in the process argument list. curl is used rather
     # than urllib because the system Python's SSL can't negotiate TLS with the host.
+    # A unique cache-buster is appended because Kinsta/Cloudflare edge-cache the REST
+    # responses — without it a freshly-created/edited snippet or page can be missed.
+    global _cb
+    _cb += 1
+    sep = "&" if "?" in path else "?"
+    path = f"{path}{sep}_cb={os.getpid()}{_cb}"
     config = f'url = "{url}{path}"\nuser = "{user}:{pw}"\nheader = "User-Agent: {UA}"\n'
     r = subprocess.run(
         ["curl", "-sS", "--fail", "-K", "-"], input=config, capture_output=True, text=True
