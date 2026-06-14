@@ -11,3 +11,9 @@ id | active | name | file
 10 | off | HubSpot form — dark terminal styling (contact) | 10-hubspot-form-dark-terminal-styling-contact.php
 11 | on  | HubSpot cookie banner — terminal styling | 11-hubspot-cookie-banner-terminal-styling.php
 12 | on  | Front page — single H1 (disable theme title on home) | 12-front-page-single-h1-disable-theme-title-on-home.php
+13 | off | SEO — meta description from excerpt | 13-seo-meta-description-from-excerpt.php
+14 | off | TEMP one-shot setter (safe to delete) | 14-temp-one-shot-setter-safe-to-delete.php
+15 | on  | Tools/Compliance pages — readable content styling | 15-tools-compliance-pages-readable-content-styling.php
+16 | on  | Testimonials — CPT + niche taxonomy + fields | 16-testimonials-cpt-niche-taxonomy-fields.php
+17 | on  | Testimonials — [vn_testimonials] display shortcode | 17-testimonials-vn-testimonials-display-shortcode.php
+18 | on  | Author bio box (single posts) | 18-author-bio-box-single-posts.php

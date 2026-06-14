@@ -1,20 +1,25 @@
 <!-- wp:html -->
 <div class="vn-section" style="border-bottom:1px solid rgba(219,68,52,0.3);"><div class="vn-container vn-text-center"><p class="vn-label"><span class="vn-cursor">&gt;</span> CONTACT</p><h1 class="vn-heading-xl vn-gradient-text">Let's talk growth</h1><p class="vn-text-muted vn-text-lg">Ready to accelerate your business? Get in touch and let's discuss how we can help.</p></div></div>
 <div class="vn-section"><div class="vn-container"><div class="vn-contact-grid"><div class="vn-terminal"><div class="vn-terminal-header">NEW_MESSAGE.exe</div><div class="vn-terminal-body" style="padding:2rem;"><style>
-.vn-hsform label{display:block;font-family:'Aldrich',sans-serif;font-size:.6875rem;text-transform:uppercase;letter-spacing:.05em;color:#ba8077;margin-bottom:.4rem;}
-.vn-hsform input[type=text],.vn-hsform input[type=email],.vn-hsform textarea{width:100%;background:#0d0d0d;color:#f0ada2;border:1px solid rgba(219,68,52,.3);padding:.625rem .75rem;font-family:'Space Mono',monospace;font-size:.875rem;border-radius:0;box-shadow:none;}
-.vn-hsform input:focus,.vn-hsform textarea:focus{border-color:#db4434;outline:none;}
+/* Light form box — override the dark terminal styling for the contact form */
+.vn-contact-grid .vn-terminal{background:#FFFFFF !important;border:1px solid rgba(0,0,0,.10) !important;border-top:2px solid rgba(209,64,47,.45) !important;box-shadow:0 18px 40px -24px rgba(0,0,0,.18) !important;}
+.vn-contact-grid .vn-terminal-header{background:#F4F1EF !important;color:#6E5B55 !important;border-bottom:1px solid rgba(0,0,0,.08) !important;}
+.vn-contact-grid .vn-terminal-body{color:#2A211E !important;}
+.vn-hsform label{display:block;font-family:'Aldrich',sans-serif;font-size:.6875rem;text-transform:uppercase;letter-spacing:.05em;color:#6E5B55;margin-bottom:.4rem;}
+.vn-hsform input[type=text],.vn-hsform input[type=email],.vn-hsform textarea{width:100%;background:#FBFAF8;color:#2A211E;border:1px solid rgba(0,0,0,.18);padding:.625rem .75rem;font-family:'Space Mono',monospace;font-size:.875rem;border-radius:0;box-shadow:none;}
+.vn-hsform input::placeholder,.vn-hsform textarea::placeholder{color:#9A8B85;}
+.vn-hsform input:focus,.vn-hsform textarea:focus{border-color:#D1402F;outline:none;background:#fff;}
 .vn-hsform-field{margin-bottom:1rem;}
 .vn-hsform-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:600px){.vn-hsform-row{grid-template-columns:1fr;}}
-.vn-hsform-submit{background:#db4434;color:#fff;border:2px solid #db4434;font-family:'Aldrich',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.875rem;padding:.75rem 2rem;cursor:pointer;width:100%;transition:box-shadow .3s ease;border-radius:0;}
-.vn-hsform-submit:hover{box-shadow:0 0 25px rgba(219,68,52,.6);}
+.vn-hsform-submit{background:#D1402F;color:#fff;border:2px solid #D1402F;font-family:'Aldrich',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.875rem;padding:.75rem 2rem;cursor:pointer;width:100%;transition:box-shadow .3s ease;border-radius:0;}
+.vn-hsform-submit:hover{box-shadow:0 0 20px rgba(209,64,47,.45);}
 .vn-hsform-submit:disabled{opacity:.6;cursor:wait;}
-.vn-hsform-note{font-size:.7rem;color:#886660;margin-top:.75rem;}
-.vn-hsform-note a{color:#ba8077;}
+.vn-hsform-note{font-size:.7rem;color:#9A8B85;margin-top:.75rem;}
+.vn-hsform-note a{color:#B5362A;}
 .vn-hsform-status{display:none;font-size:.875rem;margin-top:1rem;padding:.75rem;border:1px solid;}
-.vn-hsform-status.ok{display:block;color:#3ddc84;border-color:rgba(61,220,132,.4);}
-.vn-hsform-status.err{display:block;color:#db4434;border-color:rgba(219,68,52,.4);}
+.vn-hsform-status.ok{display:block;color:#11854A;border-color:rgba(17,133,74,.4);}
+.vn-hsform-status.err{display:block;color:#D1402F;border-color:rgba(209,64,47,.4);}
 .vn-hsform-hp{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;}
 </style>
 <form class="vn-hsform" id="vn-contact-form" novalidate>

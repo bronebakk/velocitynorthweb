@@ -6,3 +6,6 @@ id | slug | title | file
 15 | contact | Contact | contact.html
 29 | privacy | Privacy Policy | privacy.html
 32 | compliance-check | Free Compliance Check | compliance-check.html
+41 | terms | Terms of Service | terms.html
+47 | tools | Tools | tools.html
+54 | testimonials | Results | testimonials.html

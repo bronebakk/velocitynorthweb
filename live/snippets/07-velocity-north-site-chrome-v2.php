@@ -30,13 +30,13 @@ add_action('wp_head', function() { ?>
 @keyframes vnTermCursor { 50% { opacity:0; } }
 
 /* === Unwrap GP containers on inner pages so .vn-section breathes === */
-body:not(.home) .site.grid-container,
-body:not(.home) .site-content,
-body:not(.home) .content-area,
-body:not(.home) .site-main,
-body:not(.home) article.page,
-body:not(.home) .inside-article,
-body:not(.home) .entry-content {
+body.page .site.grid-container,
+body.page .site-content,
+body.page .content-area,
+body.page .site-main,
+body.page article.page,
+body.page .inside-article,
+body.page .entry-content {
   max-width: none !important;
   width: 100% !important;
   padding: 0 !important;
@@ -45,9 +45,9 @@ body:not(.home) .entry-content {
   border: none !important;
   box-shadow: none !important;
 }
-body:not(.home) .grid-container { max-width: none !important; padding: 0 !important; }
-body:not(.home) .entry-header { display: none !important; }
-body:not(.home) .post-navigation, body:not(.home) .comments-area { display: none !important; }
+body.page .grid-container { max-width: none !important; padding: 0 !important; }
+body.page .entry-header { display: none !important; }
+body.page .post-navigation, body.page .comments-area { display: none !important; }
 
 /* Home keeps its own .vn-h__wrap container; still unwrap GP article around it */
 body.home .site.grid-container,
@@ -712,6 +712,7 @@ add_action('wp_footer', function() { ?>
           <li><a href="/about/">About</a></li>
           <li><a href="/services/">Services</a></li>
           <li><a href="/contact/">Contact</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
         </ul>
       </div>
       <div>
