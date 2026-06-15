@@ -18,3 +18,8 @@ id | active | name | file
 17 | on  | Testimonials — [vn_testimonials] display shortcode | 17-testimonials-vn-testimonials-display-shortcode.php
 18 | on  | Author bio box (single posts) | 18-author-bio-box-single-posts.php
 19 | on  | Author SEO — avatar + Person schema (Rank Math) | 19-author-seo-avatar-person-schema-rank-math.php
+20 | on  | VN Design System — Foundation (P0) | 20-vn-design-system-foundation-p0.php
+21 | on  | VN Design System — Chrome (P1) | 21-vn-design-system-chrome-p1.php
+22 | on  | VN Design System — Home (P2) | 22-vn-design-system-home-p2.php
+23 | on  | VN Design System — Content (P3) | 23-vn-design-system-content-p3.php
+24 | on  | VN Design System — Conversion + Edge (P4/P5) | 24-vn-design-system-conversion-edge-p4-p5.php
