@@ -23,3 +23,5 @@ id | active | name | file
 22 | on  | VN Design System — Home (P2) | 22-vn-design-system-home-p2.php
 23 | on  | VN Design System — Content (P3) | 23-vn-design-system-content-p3.php
 24 | on  | VN Design System — Conversion + Edge (P4/P5) | 24-vn-design-system-conversion-edge-p4-p5.php
+25 | on  | No sidebar (design has none) | 25-no-sidebar-design-has-none.php
+26 | on  | Single H1 — suppress GP page title | 26-single-h1-suppress-gp-page-title.php
