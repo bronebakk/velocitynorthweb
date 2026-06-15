@@ -25,6 +25,11 @@ snippet and published page. Because it clears first, **deletions on live
 propagate** to git. Run it at the start and/or end of any session that touched
 the site, so `git diff` shows exactly what changed in production.
 
+**This repo is the ONLY git mirror of the live Code Snippets — do not create a
+parallel backup elsewhere.** A second copy once lived in the `compliance-audit-tool`
+repo (`site-config/snippets/`), drifted behind live, and caused confusion about
+where "live" was; it was retired 2026-06-15. Mirror snippets here only.
+
 ## Layout
 
 - `live/snippets/` — exported Code Snippets (`NN-name.php`, NN = snippet id). See `_manifest.txt` for active/inactive.
