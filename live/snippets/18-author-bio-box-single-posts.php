@@ -32,7 +32,7 @@ add_action('wp_head', function(){
     if (!is_singular('post')) return; ?>
 <style>
 .vn-author-box{display:flex;gap:1.5rem;margin-top:3rem;padding:1.5rem 1.75rem;background:#FFFFFF;border:1px solid rgba(0,0,0,.10);border-top:2px solid rgba(209,64,47,.45);font-family:'Space Mono',monospace;align-items:flex-start;}
-.vn-author-photo{flex:none;width:96px;height:96px;object-fit:cover;object-position:center 20%;display:block;filter:grayscale(.08);}
+.vn-author-photo{flex:none !important;width:96px !important;height:96px !important;min-width:96px;object-fit:cover !important;object-position:center 18% !important;border-radius:50% !important;display:block;filter:grayscale(.08);}
 .vn-author-eyebrow{font-family:'Aldrich',sans-serif;font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;color:#D1402F;margin:0 0 .35rem;}
 .vn-author-name-lg{font-family:'Aldrich',sans-serif;font-size:1.15rem;color:#1A1411;margin:0 0 .6rem;}
 .vn-author-bio{font-size:.85rem;line-height:1.65;color:#6E5B55;margin:0 0 .65rem;}
