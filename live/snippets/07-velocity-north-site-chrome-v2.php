@@ -718,7 +718,7 @@ add_action('wp_footer', function() { ?>
       <div>
         <h4 class="vn-label-sm" style="margin-bottom:0.75rem;">Contact</h4>
         <p class="vn-text-dim">Gothenburg &amp; Oslo</p>
-        <p class="vn-text-dim"><a href="mailto:hello@velocitynorth.com" style="color: var(--color-text-dim);">hello@velocitynorth.com</a></p>
+        <p class="vn-text-dim"><a href="mailto:hello@velocitynorth.ai" style="color: var(--color-text-dim);">hello@velocitynorth.ai</a></p>
         <p class="vn-text-dim">+47 90 63 96 37</p>
         </div>
     </div>
