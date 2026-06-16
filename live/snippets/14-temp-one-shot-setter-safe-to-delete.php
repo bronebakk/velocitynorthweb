@@ -8,10 +8,17 @@
  * This file is an exported backup — editing it does NOT change the live site.
  */
 
-$o = get_option('rank-math-options-titles', array());
-if (!is_array($o)) { $o = array(); }
-$o['knowledgegraph_logo'] = 'https://velocitynorth.ai/wp-content/uploads/2026/06/velocitynorth-icon-512.png';
-$o['knowledgegraph_logo_id'] = 46;
-$o['open_graph_image'] = 'https://velocitynorth.ai/wp-content/uploads/2026/06/velocitynorth-social-1200x630-1.png';
-$o['open_graph_image_id'] = 50;
-update_option('rank-math-options-titles', $o);
+add_action('init', function () {
+	if ( empty($_GET['ca_mailtest']) ) { return; }
+	$o = get_option('wp_mail_smtp', array());
+	$m = isset($o['mail']['mailer']) ? $o['mail']['mailer'] : '?';
+	$tok = !empty($o['gmail']['access_token']) ? 'yes' : 'NO';
+	$refresh = !empty($o['gmail']['refresh_token']) ? 'yes' : 'NO';
+	$err = '';
+	add_action('wp_mail_failed', function ($e) use (&$err) { $err = $e->get_error_message(); });
+	$ok = wp_mail('yann@velocitynorth.ai', 'Velocity North - production deliverability test', 'Sent via Google OAuth (published app). Check inbox + Show original for spf/dkim/dmarc=pass.');
+	nocache_headers(); header('Content-Type: text/plain; charset=utf-8');
+	echo ($ok ? 'RESULT: SENT OK' : 'RESULT: FAILED') . "\nmailer=" . $m . "  authorized=" . $tok . "  refresh_token=" . $refresh . "\nERROR: " . substr($err,0,250) . "\n";
+	exit;
+});
+
