@@ -593,7 +593,7 @@ img { max-width: 100%; height: auto; }
   --color-text:#2A211E !important;
   --color-text-muted:#6E5B55 !important;
   --color-text-dim:#9A8B85 !important;
-  --color-border:rgba(209,64,47,0.28) !important;
+  --color-border:rgba(0,0,0,0.10) !important;
   --color-card-bg:#FFFFFF !important;
 }
 
