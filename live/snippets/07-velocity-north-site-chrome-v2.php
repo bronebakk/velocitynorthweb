@@ -623,7 +623,7 @@ body .site { background:transparent !important; }
 }
 
 /* Cards on white */
-.vn-card { background:#FFFFFF !important; border:1px solid rgba(0,0,0,0.10) !important; border-top:2px solid rgba(209,64,47,0.28) !important; }
+.vn-card { background:#FFFFFF !important; border:1px solid rgba(0,0,0,0.10) !important; border-top:1px solid rgba(0,0,0,0.10) !important; }
 .vn-card .vn-stat-value, .vn-card .vn-stat-number { color:#D1402F !important; }
 .vn-card .vn-label-sm { color:#6E5B55 !important; }
 

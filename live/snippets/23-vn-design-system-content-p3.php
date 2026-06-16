@@ -29,7 +29,7 @@ body.blog .entry-header, body.archive .entry-header, body.single .entry-header, 
 .vn-tst-filter.active{ background:var(--text) !important; color:#fff !important; border-color:var(--text) !important; }
 
 /* Blog / author archive -> branded post cards */
-body.blog article.post, body.archive article.post{ background:var(--card) !important; border:1px solid var(--border) !important; border-top:2px solid var(--border-accent) !important; border-radius:16px !important; padding:28px 30px !important; margin:0 auto 24px !important; max-width:820px !important; transition:box-shadow var(--dur) var(--ease); }
+body.blog article.post, body.archive article.post{ background:var(--card) !important; border:1px solid var(--border) !important; border-top:1px solid var(--border) !important; border-radius:16px !important; padding:28px 30px !important; margin:0 auto 24px !important; max-width:820px !important; transition:box-shadow var(--dur) var(--ease); }
 body.blog article.post:hover, body.archive article.post:hover{ box-shadow:var(--sh-card); }
 body.blog .entry-title, body.archive .entry-title{ font-family:'Aldrich',sans-serif !important; font-weight:400 !important; font-size:clamp(22px,3vw,28px) !important; line-height:1.15 !important; margin:0 0 8px !important; }
 body.blog .entry-title a, body.archive .entry-title a{ color:var(--text) !important; text-decoration:none !important; box-shadow:none !important; }

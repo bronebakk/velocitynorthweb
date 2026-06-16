@@ -54,7 +54,7 @@ add_action('wp_head', function(){ ?>
 .vn-btn-outline:focus-visible{ outline:2px solid var(--text); outline-offset:2px; }
 
 /* cards + stats (E) */
-.vn-card{ background:var(--card); border:1px solid var(--border); border-top:2px solid var(--border-accent); border-radius:16px; padding:24px; transition:box-shadow var(--dur) var(--ease); }
+.vn-card{ background:var(--card); border:1px solid var(--border); border-top:1px solid var(--border); border-radius:16px; padding:24px; transition:box-shadow var(--dur) var(--ease); }
 .vn-card:hover{ box-shadow:var(--sh-card); }
 .vn-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
 .vn-stat-number{ font-family:'Aldrich',sans-serif !important; font-size:clamp(40px,5vw,56px) !important; line-height:1; color:var(--text) !important; }

@@ -20,7 +20,7 @@ add_action('wp_head', function(){ ?>
 .vn-tool-cta{ font:700 13px/1 'Space Mono',monospace !important; letter-spacing:.04em !important; text-transform:uppercase !important; color:var(--primary-strong) !important; text-decoration:none !important; }
 .vn-tool-cta:hover{ text-decoration:underline !important; }
 /* Compliance Check — align plugin form to tokens */
-.ca-form, form.ca-form, .ca-audit, .ca-card{ background:var(--card) !important; border:1px solid var(--border) !important; border-top:2px solid var(--border-accent) !important; border-radius:16px !important; box-shadow:var(--sh-card) !important; }
+.ca-form, form.ca-form, .ca-audit, .ca-card{ background:var(--card) !important; border:1px solid var(--border) !important; border-top:1px solid var(--border) !important; border-radius:16px !important; box-shadow:var(--sh-card) !important; }
 .ca-form input[type=text], .ca-form input[type=email], .ca-form input[type=url], .ca-audit input{ border-radius:8px !important; border:1px solid rgba(0,0,0,.18) !important; font-family:'Space Mono',monospace !important; }
 .ca-form button, .ca-form input[type=submit], .ca-audit button{ background:var(--primary) !important; color:#fff !important; border:0 !important; border-radius:8px !important; font:700 14px/1 'Space Mono',monospace !important; letter-spacing:.04em; padding:13px 22px !important; }
 .ca-form button:hover{ background:var(--primary-strong) !important; }
