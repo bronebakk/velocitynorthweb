@@ -39,6 +39,14 @@ keep this folder in sync.
   honeypot field); the site tracking script links submissions to visit history.
 - **HTTPS** — `http://` 301-redirects to `https://` (handled at Kinsta/CF edge).
 
+## Tools
+
+- **Compliance audit tool** — a component embedded under **Tools** on the site.
+  Its source lives in a separate repo:
+  <https://github.com/bronebakk/compliance-audit-tool>. (Note: that repo once
+  also held a stale mirror of the Code Snippets — retired 2026-06-15; snippets
+  are mirrored only in this repo now.)
+
 ## Operator
 
 Site operated by **Suya AB** (org. no. 559024-5717), trading as Velocity North.
