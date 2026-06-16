@@ -16,7 +16,7 @@ add_action('wp_head', function(){ ?>
 body.blog .entry-header, body.archive .entry-header, body.single .entry-header, body.author .entry-header{ display:block !important; }
 
 /* H · Testimonial cards + filters -> tokens */
-.vn-tst-card{ border-radius:16px !important; border:1px solid var(--border) !important; border-top:2px solid var(--border-accent) !important; box-shadow:none !important; transition:box-shadow var(--dur) var(--ease) !important; }
+.vn-tst-card{ border-radius:16px !important; border:1px solid var(--border) !important; border-top:1px solid var(--border) !important; box-shadow:none !important; transition:box-shadow var(--dur) var(--ease) !important; }
 .vn-tst-card:hover{ box-shadow:var(--sh-card) !important; }
 .vn-tst-result{ font-family:'Aldrich',sans-serif !important; color:var(--primary) !important; }
 .vn-tst-stars{ color:var(--primary) !important; }
