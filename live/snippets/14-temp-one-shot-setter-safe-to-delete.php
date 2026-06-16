@@ -10,14 +10,20 @@
 
 
 add_action('init', function(){
-    if (!isset($_GET['ca_cta']) || $_GET['ca_cta'] !== 'vn2026') return;
+    if (!isset($_GET['ca_v']) || $_GET['ca_v'] !== 'vn2026') return;
     if (!headers_sent()) header('Content-Type: text/plain; charset=utf-8');
-    $ca = get_option('ca_settings', array());
-    if (!is_array($ca)) $ca = array();
-    echo "cta_url before: ".(isset($ca['cta_url'])?$ca['cta_url']:'(unset)')."\n";
-    $ca['cta_url'] = '';
-    update_option('ca_settings', $ca);
-    echo "cta_url after:  '".(isset($ca['cta_url'])?$ca['cta_url']:'')."'  (empty = CTA hidden)\n";
+    global $wpdb;
+    echo "plugin_version: ".(defined('CA_VERSION')?CA_VERSION:'?')."\n";
+    echo "leads_db_version: ".get_option('ca_leads_db')."\n";
+    $t = $wpdb->prefix.'ca_leads';
+    $cols = $wpdb->get_col("SHOW COLUMNS FROM $t");
+    foreach (array('first_name','last_name','company','marketing') as $c)
+        echo "  col $c: ".(in_array($c,$cols)?'YES':'MISSING')."\n";
+    if (class_exists('Compliance_Audit_Tool')) {
+        echo "is_free_email gmail.com: ".(Compliance_Audit_Tool::is_free_email('x@gmail.com')?'BLOCKED':'allowed')."\n";
+        echo "is_free_email digtective.com: ".(Compliance_Audit_Tool::is_free_email('x@digtective.com')?'blocked':'ALLOWED')."\n";
+    }
+    echo "cta_url: '".CA_Settings::get('cta_url','')."'\n";
     exit;
 });
 
