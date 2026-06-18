@@ -39,6 +39,45 @@ keep this folder in sync.
   honeypot field); the site tracking script links submissions to visit history.
 - **HTTPS** — `http://` 301-redirects to `https://` (handled at Kinsta/CF edge).
 
+## Contact form & lead notifications
+
+The contact form (`pages/contact.html`, page id 15) is **custom HTML/JS**, not a
+HubSpot-embedded form. On submit it `fetch`-POSTs to the HubSpot **Submissions API**:
+
+```
+https://api-eu1.hsforms.com/submissions/v3/integration/submit/148224378/ce7212bc-f62d-4a20-aa33-dbfb16616651
+```
+
+Field → HubSpot property mapping (sent as `{name, value}` objects):
+
+| Form field | HubSpot property |
+|------------|------------------|
+| First name | `firstname` |
+| Last name  | `lastname`  |
+| Email (required) | `email` |
+| Company    | `company`   |
+| Message    | `message`   |
+
+- **Honeypot:** hidden `website` field. If filled, the JS fakes a success message
+  and skips the POST (bot trap — CAPTCHA is intentionally disabled).
+- Every real submission creates/updates a Contact and appears in **Marketing →
+  Forms → Velocity North contact → submissions** and on the contact timeline.
+  So submissions are never lost even if a notification isn't configured.
+
+**Notifications** are configured in HubSpot (not in this repo / not in code):
+
+- **Reliable — Workflow:** Automations → Workflows → Contact-based → trigger
+  *Form submission* = Velocity North contact (`ce7212bc-…`) → action *Send internal
+  email notification* (or Slack / Create task). Fires for Submissions-API posts.
+- **Quick — form option:** Marketing → Forms → the form → Options → *Send form
+  submission notifications to* → add emails. Test once; notification emails for
+  API submissions can be flaky, so prefer the Workflow if it doesn't arrive.
+
+**Gotcha:** any filled CTA that is an `<a>` (e.g. `.vn-h__btn--fill`) needs
+`color:#fff !important` — a content link rule (`.entry-content a`) otherwise wins
+and renders red-on-red text. The hero CTA hit this (fixed 2026-06). The form's
+own submit is a `<button>`, so link rules don't touch it.
+
 ## Tools
 
 - **Compliance audit tool** — a component embedded under **Tools** on the site.
