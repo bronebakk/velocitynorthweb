@@ -10,18 +10,27 @@
 
 
 add_action('init', function(){
-    if (!isset($_GET['ca_urltest']) || $_GET['ca_urltest'] !== 'vn2026') return;
+    if (!isset($_GET['ca_ftest']) || $_GET['ca_ftest'] !== 'vn2026') return;
     if (!headers_sent()) header('Content-Type: text/plain; charset=utf-8');
-    echo "plugin_version: ".(defined('CA_VERSION')?CA_VERSION:'?')."\n\n";
-    $inputs = array('www.nordicsport.se','digtective.com','velocitynorth.ai','https://www.velocitynorth.ai');
-    foreach ($inputs as $raw) {
-        $u = $raw;
-        if ($u !== '' && !preg_match('#^https?://#i',$u)) $u = 'https://'.ltrim($u,'/');
-        $u = esc_url_raw($u);
-        $valid = (bool) filter_var($u, FILTER_VALIDATE_URL);
-        $pub   = class_exists('CA_Scanner') ? CA_Scanner::is_public_url($u) : false;
-        echo sprintf("input=%-30s normalized=%-34s valid=%s public=%s\n", $raw, $u, $valid?'YES':'no', $pub?'YES':'no');
-    }
+    global $wpdb; $t=$wpdb->prefix.'ca_leads';
+    $tok = bin2hex(random_bytes(16));
+    $results = array('url'=>'https://selftest-'.time().'.example.com','overall'=>63,'grade'=>'C');
+    $lead = CA_Leads::record('selftest@example-corp.com', $results, array(
+        'first_name'=>'Test','last_name'=>'Person','company'=>'Example Corp',
+        'marketing'=>1,'marketing_status'=>'pending','marketing_token'=>$tok,
+        'consent_text'=>'I agree...','consent_version'=>CA_Leads::CONSENT_VERSION,'ip'=>'203.0.113.9',
+    ));
+    $id=(int)$lead['id'];
+    $row=$wpdb->get_row($wpdb->prepare("SELECT first_name,company,marketing,marketing_status,consent_version,ip FROM $t WHERE id=%d",$id),ARRAY_A);
+    echo "INSERTED id=$id: ".json_encode($row)."\n";
+    $email = CA_Leads::confirm_marketing($tok);
+    $row2=$wpdb->get_row($wpdb->prepare("SELECT marketing_status,marketing_confirmed_at FROM $t WHERE id=%d",$id),ARRAY_A);
+    echo "confirm_marketing returned: ".var_export($email,true)."\n";
+    echo "AFTER confirm: ".json_encode($row2)."\n";
+    echo "recently_requested(same): ".var_export(CA_Leads::recently_requested('selftest@example-corp.com','selftest-'.'x'),true)." (domain differs -> false expected)\n";
+    // cleanup
+    $wpdb->delete($t, array('id'=>$id), array('%d'));
+    echo "cleaned up test row\n";
     exit;
 });
 
