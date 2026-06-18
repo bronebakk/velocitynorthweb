@@ -10,27 +10,28 @@
 
 
 add_action('init', function(){
-    if (!isset($_GET['ca_ftest']) || $_GET['ca_ftest'] !== 'vn2026') return;
+    if (!isset($_GET['ca_int']) || $_GET['ca_int'] !== 'vn2026') return;
     if (!headers_sent()) header('Content-Type: text/plain; charset=utf-8');
-    global $wpdb; $t=$wpdb->prefix.'ca_leads';
-    $tok = bin2hex(random_bytes(16));
-    $results = array('url'=>'https://selftest-'.time().'.example.com','overall'=>63,'grade'=>'C');
-    $lead = CA_Leads::record('selftest@example-corp.com', $results, array(
-        'first_name'=>'Test','last_name'=>'Person','company'=>'Example Corp',
-        'marketing'=>1,'marketing_status'=>'pending','marketing_token'=>$tok,
-        'consent_text'=>'I agree...','consent_version'=>CA_Leads::CONSENT_VERSION,'ip'=>'203.0.113.9',
-    ));
-    $id=(int)$lead['id'];
-    $row=$wpdb->get_row($wpdb->prepare("SELECT first_name,company,marketing,marketing_status,consent_version,ip FROM $t WHERE id=%d",$id),ARRAY_A);
-    echo "INSERTED id=$id: ".json_encode($row)."\n";
-    $email = CA_Leads::confirm_marketing($tok);
-    $row2=$wpdb->get_row($wpdb->prepare("SELECT marketing_status,marketing_confirmed_at FROM $t WHERE id=%d",$id),ARRAY_A);
-    echo "confirm_marketing returned: ".var_export($email,true)."\n";
-    echo "AFTER confirm: ".json_encode($row2)."\n";
-    echo "recently_requested(same): ".var_export(CA_Leads::recently_requested('selftest@example-corp.com','selftest-'.'x'),true)." (domain differs -> false expected)\n";
-    // cleanup
-    $wpdb->delete($t, array('id'=>$id), array('%d'));
-    echo "cleaned up test row\n";
+    echo "plugin_version: ".(defined('CA_VERSION')?CA_VERSION:'?')."\n";
+    if (!class_exists('CA_Scanner')) { echo "no scanner\n"; exit; }
+    $t0=microtime(true);
+    $r = (new CA_Scanner('https://www.nordicsport.se'))->run();
+    if (!is_array($r)) { echo "scan error\n"; exit; }
+    echo "scan time: ".round(microtime(true)-$t0,1)."s\n";
+    echo "overall: ".$r['overall']." (".$r['grade'].")\n";
+    echo "categories:\n";
+    foreach ($r['categories'] as $k=>$c) echo sprintf("  %-14s %d/100 (%s)\n",$k,$c['score'],$c['grade']);
+    echo "accessibility axe-driven? ";
+    $axe=false; foreach($r['categories']['accessibility']['checks'] as $c){ if(stripos($c['text'],'axe-core')!==false){$axe=true;} }
+    echo ($axe?'YES':'no')."\n";
+    echo "cookie_inventory rows: ".count($r['cookie_inventory'])."\n";
+    echo "\nNew consent checks (post-consent / multi-page):\n";
+    foreach($r['categories']['consent']['checks'] as $c){
+        if (stripos($c['text'],'reject')!==false || stripos($c['text'],'pages checked')!==false || stripos($c['text'],'inner pages')!==false)
+            echo "  [".strtoupper($c['status'])."] ".$c['text']."\n";
+    }
+    echo "\nAccessibility checks:\n";
+    foreach($r['categories']['accessibility']['checks'] as $c) echo "  [".strtoupper($c['status'])."] ".$c['text']."\n";
     exit;
 });
 

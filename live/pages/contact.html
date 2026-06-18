@@ -24,10 +24,13 @@
 </style>
 <form class="vn-hsform" id="vn-contact-form" novalidate>
 <div class="vn-hsform-row">
-<div class="vn-hsform-field"><label for="vnf-name">Name</label><input type="text" id="vnf-name" name="name" autocomplete="name"></div>
-<div class="vn-hsform-field"><label for="vnf-email">Email *</label><input type="email" id="vnf-email" name="email" required autocomplete="email"></div>
+<div class="vn-hsform-field"><label for="vnf-firstname">First name</label><input type="text" id="vnf-firstname" name="firstname" autocomplete="given-name"></div>
+<div class="vn-hsform-field"><label for="vnf-lastname">Last name</label><input type="text" id="vnf-lastname" name="lastname" autocomplete="family-name"></div>
 </div>
+<div class="vn-hsform-row">
+<div class="vn-hsform-field"><label for="vnf-email">Email *</label><input type="email" id="vnf-email" name="email" required autocomplete="email"></div>
 <div class="vn-hsform-field"><label for="vnf-company">Company</label><input type="text" id="vnf-company" name="company" autocomplete="organization"></div>
+</div>
 <div class="vn-hsform-field"><label for="vnf-message">Message</label><textarea id="vnf-message" name="message" rows="5"></textarea></div>
 <div class="vn-hsform-hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <button type="submit" class="vn-hsform-submit">Send message &rarr;</button>
@@ -44,10 +47,10 @@ e.preventDefault();
 var email=f.email.value.trim();
 if(!email){status.className='vn-hsform-status err';status.textContent='> ERROR: email is required';return;}
 if(f.website.value){status.className='vn-hsform-status ok';status.textContent='> MESSAGE_SENT :: we will get back to you within 24h';f.reset();return;}
-var name=f.name.value.trim(),sp=name.indexOf(' ');
+var firstname=f.firstname.value.trim(),lastname=f.lastname.value.trim();
 var fields=[{name:'email',value:email}];
-if(name)fields.push({name:'firstname',value:sp>0?name.slice(0,sp):name});
-if(sp>0)fields.push({name:'lastname',value:name.slice(sp+1)});
+if(firstname)fields.push({name:'firstname',value:firstname});
+if(lastname)fields.push({name:'lastname',value:lastname});
 if(f.company.value.trim())fields.push({name:'company',value:f.company.value.trim()});
 if(f.message.value.trim())fields.push({name:'message',value:f.message.value.trim()});
 var btn=f.querySelector('.vn-hsform-submit');btn.disabled=true;btn.textContent='Sending...';
