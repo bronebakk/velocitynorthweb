@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-  <article class="vn-page">
+  <article class="vn-post">
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
