@@ -11,3 +11,6 @@ Profile.pdf
 
 # OS noise
 .DS_Store
+
+# Cowork / Obsidian draft files — local only
+*.md
