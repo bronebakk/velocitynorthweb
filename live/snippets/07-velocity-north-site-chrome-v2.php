@@ -592,7 +592,7 @@ img { max-width: 100%; height: auto; }
   --color-secondary:#B5362A !important;
   --color-text:#2A211E !important;
   --color-text-muted:#6E5B55 !important;
-  --color-text-dim:#9A8B85 !important;
+  --color-text-dim:#766960 !important;
   --color-border:rgba(0,0,0,0.10) !important;
   --color-card-bg:#FFFFFF !important;
 }
@@ -603,7 +603,7 @@ body .site { background:transparent !important; }
 /* HEADER white */
 .site-header { background:#FBFAF8 !important; border-bottom:1px solid rgba(0,0,0,0.10) !important; }
 .site-title a, .main-title a, .site-title { color:#1A1411 !important; }
-.site-title a::before, .main-title a::before { color:#9A8B85 !important; }
+.site-title a::before, .main-title a::before { color:#766960 !important; }
 .site-title a::after, .main-title a::after { background:#D1402F !important; }
 .main-navigation, .main-navigation .inside-navigation { background:#FBFAF8 !important; }
 .main-navigation .menu li a { color:#6E5B55 !important; }
@@ -633,10 +633,10 @@ body .site { background:transparent !important; }
 .vn-btn-filled:hover { background:#B5362A !important; }
 
 /* Labels and prose */
-.vn-label { color:#D1402F !important; }
+.vn-label { color:#B5362A !important; }
 .vn-text-muted { color:#6E5B55 !important; }
 .vn-text-muted-sm { color:#6E5B55 !important; }
-.vn-text-dim { color:#9A8B85 !important; }
+.vn-text-dim { color:#766960 !important; }
 .vn-cursor { color:#D1402F !important; }
 .vn-prose, .vn-prose p, .vn-prose li { color:#2A211E !important; }
 
@@ -702,7 +702,7 @@ add_action('wp_footer', function() { ?>
   <div class="vn-container">
     <div class="vn-footer-grid">
       <div>
-        <p class="vn-logo-text" style="margin-bottom:1rem;">&gt; VELOCITY<span style="color: var(--color-primary);">NORTH_</span></p>
+        <p class="vn-logo-text" style="margin-bottom:1rem;">&gt; VELOCITY<span style="color:#B5362A;">NORTH_</span></p>
         <p class="vn-text-muted-sm">Data-driven growth for serious businesses.<br>Performance marketing, analytics, and technology consulting.</p>
       </div>
       <div>

@@ -13,7 +13,7 @@ add_action('wp_head', function(){ ?>
 /* ===== VN DESIGN SYSTEM — P0 FOUNDATION ===== */
 :root{
   --bg:#FBFAF8; --bg-alt:#F4F1EF; --card:#FFFFFF;
-  --text:#1A1411; --text-body:#2A211E; --muted:#6E5B55; --dim:#9A8B85;
+  --text:#1A1411; --text-body:#2A211E; --muted:#6E5B55; --dim:#766960;
   --primary:#D1402F; --primary-strong:#B5362A;
   --verified:#11854A; --verified-fill:#2FBE71;
   --border:rgba(0,0,0,.10); --border-accent:rgba(209,64,47,.32);

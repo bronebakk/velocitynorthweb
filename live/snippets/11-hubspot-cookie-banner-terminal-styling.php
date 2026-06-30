@@ -16,10 +16,10 @@ add_action('wp_head', function() { ?>
 #hs-eu-cookie-confirmation #hs-eu-policy-wording,
 #hs-eu-cookie-confirmation #hs-eu-policy-wording p { color:#ba8077 !important; font-family:'Space Mono',monospace !important; font-size:.72rem !important; line-height:1.6 !important; }
 #hs-eu-cookie-confirmation #hs-eu-policy-wording a,
-#hs-eu-cookie-confirmation a { color:#db4434 !important; }
+#hs-eu-cookie-confirmation a { color:#f0ada2 !important; }
 #hs-eu-cookie-confirmation #hs-eu-cookie-confirmation-buttons-area { margin-top:10px !important; }
 #hs-eu-cookie-confirmation #hs-eu-confirmation-button {
-  background:#db4434 !important; border:2px solid #db4434 !important; color:#fff !important;
+  background:#b5362a !important; border:2px solid #b5362a !important; color:#fff !important;
   font-family:'Aldrich',sans-serif !important; text-transform:uppercase !important; letter-spacing:.08em !important;
   font-size:.72rem !important; padding:9px 22px !important; border-radius:0 !important; }
 #hs-eu-cookie-confirmation #hs-eu-decline-button {
@@ -27,5 +27,6 @@ add_action('wp_head', function() { ?>
   font-family:'Aldrich',sans-serif !important; text-transform:uppercase !important; letter-spacing:.08em !important;
   font-size:.72rem !important; padding:9px 22px !important; border-radius:0 !important; }
 #hs-eu-cookie-confirmation #hs-eu-decline-button:hover { color:#db4434 !important; }
+#hs-eu-cookie-confirmation #hs-eu-cookie-settings-button { color:#f0ada2 !important; }
 </style>
 <?php }, 50);

@@ -26,3 +26,10 @@ id | active | name | file
 25 | on  | No sidebar (design has none) | 25-no-sidebar-design-has-none.php
 26 | on  | Single H1 — suppress GP page title | 26-single-h1-suppress-gp-page-title.php
 27 | on  | VN — Jakob review fixes | 27-vn-jakob-review-fixes.php
+28 | off | TEMP deploy 2.4.0 (safe to delete) | 28-temp-deploy-2-4-0-safe-to-delete.php
+29 | off | TEMP deploy 2.4.1 (safe to delete) | 29-temp-deploy-2-4-1-safe-to-delete.php
+30 | off | TEMP deploy 2.4.2 (safe to delete) | 30-temp-deploy-2-4-2-safe-to-delete.php
+31 | off | TEMP deploy 2.5.0 (safe to delete) | 31-temp-deploy-2-5-0-safe-to-delete.php
+32 | on  | VN — Security headers (HSTS, CSP, X-Frame-Options, Referrer/Permissions-Policy) | 32-vn-security-headers-hsts-csp-x-frame-options-referrer-permissions-policy.php
+33 | off | TEMP deploy 2.5.1 (safe to delete) | 33-temp-deploy-2-5-1-safe-to-delete.php
+34 | off | TEMP props (safe to delete) | 34-temp-props-safe-to-delete.php
